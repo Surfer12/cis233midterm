@@ -2,58 +2,42 @@ import java.util.*;
 
 public class Dijkstra {
 
-    public static Map<Integer, Integer> dijkstra(Map<Integer, Map<Integer, Integer>> graph, int source) {
-        Map<Integer, Integer> distances = new HashMap<>();
-        Set<Integer> visited = new HashSet<>();
-        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1])); 
-
-        for (int node : graph.keySet()) {
-            distances.put(node, Integer.MAX_VALUE);
-        }
-        distances.put(source, 0);
-        pq.offer(new int[]{source, 0});
-
-        while (!pq.isEmpty()) {
-            int[] curr = pq.poll();
-            int currNode = curr[0];
-            int currDist = curr[1];
-
-            if (visited.contains(currNode)) continue;
-            visited.add(currNode);
-
-            for (Map.Entry<Integer, Integer> neighbor : graph.get(currNode).entrySet()) {
-                int neighborNode = neighbor.getKey();
-                int weight = neighbor.getValue();
-                int newDist = currDist + weight;
-
-                if (newDist < distances.get(neighborNode)) {
-                    distances.put(neighborNode, newDist);
-                    pq.offer(new int[]{neighborNode, newDist});
-                }
-            }
-        }
-        return distances;
+    public static Map<Node, Integer> dijkstra(Map<Node, Map<Node, Integer>> graph, Node source) {
+        return GenericTraversal.dijkstra(graph, source);
     }
 
     // Example usage (add this to your main method or a separate test method)
     public static void main(String[] args) {
         // Create a sample graph (adjacency list representation)
-        Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
+        Map<Node, Map<Node, Integer>> graph = new HashMap<>();
         
-         // Add nodes and edges with weights
-         graph.put(1, new HashMap<>(Map.of(2, 4, 3, 2))); // Node 1 connected to 2 (weight 4) and 3 (weight 2)
-         graph.put(2, new HashMap<>(Map.of(4, 5, 5, 1))); // Node 2 connected to 4 (weight 5) and 5 (weight 1)
-         graph.put(3, new HashMap<>(Map.of(6, 3))); // Node 3 connected to 6 (weight 3)
-         graph.put(4, new HashMap<>()); // No neighbors for node 4
-         graph.put(5, new HashMap<>()); // No neighbors for node 5
-         graph.put(6, new HashMap<>()); // No neighbors for node 6
+        // Add nodes and edges with weights
+        Node node1 = new Node(1);
+        Node node2 = new Node(2);
+        Node node3 = new Node(3);
+        Node node4 = new Node(4);
+        Node node5 = new Node(5);
+        Node node6 = new Node(6);
 
-        int sourceNode = 1; // Choose a source node
-        Map<Integer, Integer> shortestDistances = dijkstra(graph, sourceNode);
+        node1.neighbors.add(node2);
+        node1.neighbors.add(node3);
+        node2.neighbors.add(node4);
+        node2.neighbors.add(node5);
+        node3.neighbors.add(node6);
 
-        System.out.println("Shortest distances from node " + sourceNode + ":");
-        for (Map.Entry<Integer, Integer> entry : shortestDistances.entrySet()) {
-            System.out.println("To node " + entry.getKey() + ": " + entry.getValue());
+        graph.put(node1, new HashMap<>(Map.of(node2, 4, node3, 2)));
+        graph.put(node2, new HashMap<>(Map.of(node4, 5, node5, 1)));
+        graph.put(node3, new HashMap<>(Map.of(node6, 3)));
+        graph.put(node4, new HashMap<>());
+        graph.put(node5, new HashMap<>());
+        graph.put(node6, new HashMap<>());
+
+        Node sourceNode = node1; // Choose a source node
+        Map<Node, Integer> shortestDistances = dijkstra(graph, sourceNode);
+
+        System.out.println("Shortest distances from node " + sourceNode.data + ":");
+        for (Map.Entry<Node, Integer> entry : shortestDistances.entrySet()) {
+            System.out.println("To node " + entry.getKey().data + ": " + entry.getValue());
         }
     }
 }

@@ -1,14 +1,12 @@
-
-
-// Assuming root is the root of a binary search tree, what is the time complexity of the printElements method?
+package cis233midterm;
 
 public class TreeTraversal {
     public void printElements(Node root) {
         if (root == null) {
             return;
         }
-        printElements(root.left);
-        System.out.println(root.data);
-        printElements(root.right); 
+        for (int data : GenericTraversal.inOrderTraversal(root)) {
+            System.out.println(data);
+        }
     }
 }

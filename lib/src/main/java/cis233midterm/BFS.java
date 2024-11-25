@@ -10,27 +10,7 @@ public class BFS {
 
     // Method to perform Breadth-First Search on a graph
     public static List<Integer> bfs(Map<Integer, List<Integer>> graph, int startNode) {
-        List<Integer> visitedNodes = new ArrayList<>(); // List to store the order of visited nodes
-        Queue<Integer> queue = new LinkedList<>(); // Queue to keep track of nodes to visit
-        Set<Integer> visited = new HashSet<>(); // Set to keep track of visited nodes
-
-        queue.offer(startNode); // Add the starting node to the queue
-        visited.add(startNode); // Mark the starting node as visited
-
-        while (!queue.isEmpty()) {
-            int currentNode = queue.poll(); // Dequeue a node from the front of the queue
-            visitedNodes.add(currentNode); // Add the dequeued node to the visited list
-
-            // Iterate over the neighbors of the current node
-            for (int neighbor : graph.get(currentNode)) {
-                if (!visited.contains(neighbor)) { // If a neighbor hasn't been visited
-                    visited.add(neighbor); // Mark the neighbor as visited
-                    queue.offer(neighbor); // Enqueue the neighbor to visit it later
-                }
-            }
-        }
-
-        return visitedNodes; // Return the list of visited nodes in BFS order
+        return GenericTraversal.bfs(new Node(startNode));
     }
 
     public static void main(String[] args) {
