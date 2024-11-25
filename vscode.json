@@ -3,5 +3,13 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
+    ],
+    "java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-23",
+            "path": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
+        }
     ]
 }
