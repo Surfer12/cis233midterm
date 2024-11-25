@@ -1,50 +1,28 @@
 package generic.graphs;
 
+import generic.Graph;
 import java.util.*;
 
 public class GraphList<T> implements Graph<T> {
-    private Map<T, List<T>> adjList;
+    private Map<T, Set<T>> adjacencyList;
 
     public GraphList() {
-        adjList = new HashMap<>();
+        adjacencyList = new HashMap<>();
     }
 
-    public void addVertex(T vertex) {
-        if (!adjList.containsKey(vertex)) {
-            adjList.put(vertex, new ArrayList<>());
-        }
+    public void addNode(T node) {
+        adjacencyList.putIfAbsent(node, new HashSet<>());
     }
 
     public void addEdge(T source, T destination) {
-        addVertex(source);
-        addVertex(destination);
-        adjList.get(source).add(destination);
-        adjList.get(destination).add(source); // For undirected graph
+        adjacencyList.putIfAbsent(source, new HashSet<>());
+        adjacencyList.putIfAbsent(destination, new HashSet<>());
+        adjacencyList.get(source).add(destination);
     }
 
-    public void removeEdge(T source, T destination) {
-        if (adjList.containsKey(source) && adjList.containsKey(destination)) {
-            adjList.get(source).remove(destination);
-            adjList.get(destination).remove(source);
-        }
-    }
-
-    public boolean hasEdge(T source, T destination) {
-        return adjList.containsKey(source) && adjList.get(source).contains(destination);
-    }
-
-    public List<T> getNeighbors(T vertex) {
-        return adjList.getOrDefault(vertex, new ArrayList<>());
-    }
-
-    public void printGraph() {
-        for (T vertex : adjList.keySet()) {
-            System.out.print("Vertex " + vertex + " is connected to: ");
-            for (T neighbor : adjList.get(vertex)) {
-                System.out.print(neighbor + " ");
-            }
-            System.out.println();
-        }
+    @Override
+    public Set<T> getNeighbors(T node) {
+        return adjacencyList.getOrDefault(node, new HashSet<>());
     }
 
     public static void main(String[] args) {

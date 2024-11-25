@@ -1,9 +1,10 @@
 package dfsbfs;
 
-import java.util.Set;
+import java.util.*;
 import generic.Graph;
 
 public class GenericDFS<T> implements Graph<T> {
+    private Map<T, Set<T>> adjacencyList = new HashMap<>();
     
     public void dfs(T node, Set<T> visited, Graph<T> graph) {
         if (node == null) return;
@@ -16,5 +17,10 @@ public class GenericDFS<T> implements Graph<T> {
                 dfs(neighbor, visited, graph);
             }
         }
+    }
+
+    @Override
+    public Set<T> getNeighbors(T node) {
+        return adjacencyList.getOrDefault(node, new HashSet<>());
     }
 }

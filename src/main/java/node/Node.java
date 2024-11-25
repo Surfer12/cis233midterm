@@ -1,5 +1,4 @@
 package node;
-package node;
 
 public class Node {
     public int data;
