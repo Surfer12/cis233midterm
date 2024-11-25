@@ -1,3 +1,4 @@
+
 package generic.graphs;
 
 class GraphMatrix<T> {
