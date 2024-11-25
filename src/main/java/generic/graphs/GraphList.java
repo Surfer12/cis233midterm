@@ -19,7 +19,7 @@ public class GraphList<T> implements Graph<T> {
         }
     }
 
-    @Override
+    // Remove @Override since this method does not exist in the Graph interface
     public void addEdge(T source, T destination) {
         adjacencyList.putIfAbsent(source, new HashSet<>());
         adjacencyList.putIfAbsent(destination, new HashSet<>());
@@ -28,10 +28,9 @@ public class GraphList<T> implements Graph<T> {
 
     @Override
     public void addEdge(T source, T destination, int weight) {
-        adjacencyList.putIfAbsent(source, new HashSet<>());
-        adjacencyList.putIfAbsent(destination, new HashSet<>());
-        // Assuming adjacencyList now holds weighted edges, update accordingly
-        // Example: adjacencyList.get(source).add(new Edge(destination, weight));
+        // Implementation for weighted graph can be added here
+        // For now, we'll ignore the weight and call the existing addEdge
+        addEdge(source, destination);
     }
 
     @Override
@@ -61,6 +60,11 @@ public class GraphList<T> implements Graph<T> {
     @Override
     public Set<T> getNeighbors(T node) {
         return adjacencyList.getOrDefault(node, new HashSet<>());
+    }
+
+    @Override
+    public int getVertices() {
+        return adjacencyList.size();
     }
 
     @Override
