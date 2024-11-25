@@ -2,7 +2,7 @@ package generic;
 import java.util.function.Consumer;
 
 public class InOrderTraversal<T> {
-    class TreeNode {
+    public class TreeNode {
         T data;
         TreeNode left;
         TreeNode right;

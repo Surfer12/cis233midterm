@@ -3,6 +3,18 @@ import java.util.*;
 
 public class GenericTraversal {
 
+    public static class Node {
+        int data;
+        Node left;
+        Node right;
+    }
+
+    public static class NodeDistancePair {
+        Node node;
+        int distance;
+    }       
+
+
     // Method to perform Breadth-First Search (BFS) traversal using the Node class
     public static List<Integer> bfs(Node startNode) {
         List<Integer> visitedNodes = new ArrayList<>();

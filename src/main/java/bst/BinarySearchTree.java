@@ -1,7 +1,5 @@
 package bst;
-
-import Node;
-
+import generic.GenericTraversal.Node;
 public class BinarySearchTree {
         Node root;
 

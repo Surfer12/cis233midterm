@@ -9,7 +9,7 @@ import java.util.Set;
 public class bfs<T> {
     Node<T> root;
 
-    void bfs(Node<T> root) {
+    public void bfs(Node<T> root) {
         if (root == null) return;
         
         Queue<Node<T>> queue = new LinkedList<>();

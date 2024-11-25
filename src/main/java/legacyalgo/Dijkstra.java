@@ -1,5 +1,14 @@
+// Dijkstra's algorithm for shortest path
+/* Task 1- Homework
+• Use Dijkstra's algorithm to find the shortest path and its total distance
+from Node 0 to Node 5 in the graph shown below. You are required to
+submit a pdf document. */
 
 package legacyalgo;
+
+import generic.GenericTraversal;
+import generic.GenericTraversal.Node;
+import java.util.HashMap;
 
 import java.util.*;
 

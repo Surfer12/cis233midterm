@@ -2,7 +2,7 @@ package dfsbfs;
 
 import java.util.Set;
 
-public class GenericDFS<T> implements graphgetneighbors<T> {
+public class GenericDFS<T> implements Graph<T> {
 
     public void dfs(T node, Set<T> visited, Graph<T> graph) {
         if (node == null) return;
