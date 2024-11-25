@@ -7,24 +7,10 @@
  */
 
 rootProject.name = 'cis233midterm'
-include(DijkstraProject)
 
-
+// If you want to include a specific project, replace 'DijkstraProject' with the actual project name
+// include 'DijkstraProject'
 
 // Include subprojects if any
 // include 'module1', 'module2'
-
-
-/* The 
-settings.gradle
- file in a Gradle project is responsible for defining the configuration of the build, especially in multi-project setups. In the provided snippet:
-
-```gradle
-// Configure project directories
-project(':').projectDir = file('cis233midterm')
-```
-
-the line `project(':').projectDir = file('cis233midterm')` sets the root project's directory to the `cis233midterm` folder. Here, `project(':')` refers to the root project, and the `projectDir` property specifies the filesystem location of this project. By assigning `file('cis233midterm')` to `projectDir`, you direct Gradle to use the `cis233midterm` directory as the base for the root project.
-
-This configuration is particularly useful when your project's source code is organized in a specific subdirectory, ensuring that Gradle correctly locates the necessary build scripts, source files, and resources. It's important to verify that the `cis233midterm` directory exists and contains the appropriate files to prevent build issues. Additionally, this approach can help in maintaining a clean project structure, especially in larger or more complex builds. */
 

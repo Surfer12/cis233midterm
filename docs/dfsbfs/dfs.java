@@ -1,6 +1,6 @@
 import java.util.HashSet;
 import java.util.Set;
-import lib.src.main.java.cis233midterm.Node;
+import generic.graphs.Graph;
 
 /**
  * This class contains a method to perform Depth-First Search (DFS) on a graph.
