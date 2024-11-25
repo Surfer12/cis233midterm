@@ -1,5 +1,6 @@
 package bst;
-import generic.GenericTraversal.Node;
+import node.Node;
+
 public class BinarySearchTree {
         Node root;
 
@@ -22,4 +23,4 @@ public class BinarySearchTree {
             }
             return root;
         }
-}   
+}

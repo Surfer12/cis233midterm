@@ -1,12 +1,11 @@
-import generic.GenericTraversal.GenericNode;
+import generic.GenericNode;
 
 public class TreeTraversal {
-    public void printElements(GenericNode root) {
-        if (root == null) {
-            return;
+    public <T> void printElements(GenericNode<T> root) {
+        if (root != null) {
+            printElements(root.getLeft());
+            System.out.println(root.getData());
+            printElements(root.getRight());
         }
-        printElements(root.getLeft()); // Use getter method instead of direct access
-        System.out.println(root.data);
-        printElements(root.getRight()); // Use getter method instead of direct access
     }
 }
