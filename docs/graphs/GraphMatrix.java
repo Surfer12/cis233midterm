@@ -1,8 +1,8 @@
 
 
 class GraphMatrix {
-    private int vertices;
-    private int[][] adjacencyMatrix;
+    private final int vertices;
+    private final int[][] adjacencyMatrix;
 
     public GraphMatrix(int vertices) {
         this.vertices = vertices;

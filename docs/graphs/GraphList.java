@@ -1,8 +1,8 @@
 import java.util.*;
 
 class GraphList {
-    private int vertices;
-    private LinkedList<Integer>[] adjList;
+    private final int vertices;
+    private final LinkedList<Integer>[] adjList;
 
     public GraphList(int vertices) {
         this.vertices = vertices;
