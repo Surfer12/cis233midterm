@@ -1,11 +1,10 @@
 
-import java.util.Arrays;
 
 class GraphMatrix {
     private int vertices;
     private int[][] adjacencyMatrix;
 
-    public Graph(int vertices) {
+    public GraphMatrix(int vertices) {
         this.vertices = vertices;
         adjacencyMatrix = new int[vertices][vertices];
     }
@@ -44,7 +43,7 @@ class GraphMatrix {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(5);
+        GraphMatrix graph = new GraphMatrix(5);
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);

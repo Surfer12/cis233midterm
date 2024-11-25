@@ -4,7 +4,7 @@ class GraphList {
     private int vertices;
     private LinkedList<Integer>[] adjList;
 
-    public Graph(int vertices) {
+    public GraphList(int vertices) {
         this.vertices = vertices;
         adjList = new LinkedList[vertices];
         for (int i = 0; i < vertices; i++) {
@@ -39,7 +39,7 @@ class GraphList {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(5);
+        GraphList graph = new GraphList(5);
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);
