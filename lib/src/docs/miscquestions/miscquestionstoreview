@@ -1,0 +1,31 @@
+Question 1: What is the relationship between a class and an object? 
+
+A class is an instance of an object. 
+, Not Selected
+
+An object is an instance of a class. 
+, Not Selected
+
+Classes and objects are unrelated.
+, Not Selected
+Incorrect answer:
+
+A class is a blueprint for creating objects.
+, Selected
+Correct Answer:
+An object is an instance of a class. 
+
+Question 2: What is the primary purpose of algorithm analysis?  
+
+To determine the correctness of an algorithm
+, Not Selected
+
+To estimate the resources an algorithm consumes 
+, Not Selected
+Incorrect answer:
+
+To optimize the code of an algorithm
+, Selected
+
+Correct Answer:
+To estimate the resources an algorithm consumes 
