@@ -22,4 +22,8 @@
 // D-B-G-E-H-I-F-C-A
 
 // In-order (Left -> Root -> Right):
+// Start at left subtree (B's subtree) D - // is child of B
+// Visit root (B) B -
+// visit root (A) A -
+// continue to processes right subtree (B's subtree) G - E - C - H - F - I -
 // D-B-A-G-E-C-H-F-I

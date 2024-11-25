@@ -1,9 +1,20 @@
-package cis233midterm;
+package lib/src/main/java/cis233midterm;
 
 import java.util.HashMap;
 import java.util.Map;
 
-// Given this code snippet, draw the graph representation and upload a picture of your graph.
+// The graph shows:
+
+// 6 vertices (1-6)
+// 5 directed edges with weights:
+// 1→2 (weight 4)
+// 1→3 (weight 2)
+//  2→4 (weight 5)
+// 2→5 (weight 1)
+// 3→6 (weight 3)
+
+// Vertices 4, 5, and 6 have no outgoing edges
+
 // NB: It is a weighted graph
 
 public class WeightedGraph {
@@ -16,6 +27,10 @@ public class WeightedGraph {
         graph.put(5, new HashMap<>()); 
         graph.put(6, new HashMap<>());
 
-        System.out.println(graph);
+        // Ensure the graph is not null before printing
+        if (graph != null) {
+            System.out.println(graph);
+        }
     }
 }
+
