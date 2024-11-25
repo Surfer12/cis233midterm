@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class DijkstraGeneric {
@@ -7,9 +6,11 @@ public class DijkstraGeneric {
         int vertices = graph.getVertices();
         int[] distances = new int[vertices];
         boolean[] visited = new boolean[vertices];
+        int[] previous = new int[vertices]; // Add previous array to track path
 
         PriorityQueue<WeightedGraph.Node> pq = new PriorityQueue<>();
         Arrays.fill(distances, Integer.MAX_VALUE);
+        Arrays.fill(previous, -1); // Initialize previous array
         distances[startVertex] = 0;
         pq.add(new WeightedGraph.Node(startVertex, 0));
 
@@ -25,11 +26,29 @@ public class DijkstraGeneric {
 
                 if (newDist < distances[neighbor.vertex]) {
                     distances[neighbor.vertex] = newDist;
+                    previous[neighbor.vertex] = currentVertex; // Track the path
                     pq.add(new WeightedGraph.Node(neighbor.vertex, newDist));
                 }
             }
         }
 
+        printPath(startVertex, vertices - 1, previous, distances); // Print path from start to end
         return distances;
+    }
+
+    private static void printPath(int start, int end, int[] previous, int[] distances) {
+        List<Integer> path = new ArrayList<>();
+        int current = end;
+        
+        while (current != -1) {
+            path.add(0, current);
+            current = previous[current];
+        }
+
+        System.out.print("Path: ");
+        for (int vertex : path) {
+            System.out.print(vertex + " ");
+        }
+        System.out.println("\nTotal distance: " + distances[end]);
     }
 }

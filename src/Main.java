@@ -1,7 +1,7 @@
 import DijkstraGeneric;
 import WeightedGraph;
 
-    public class Main {
+public class Main {
     public static void main(String[] args) {
         WeightedGraph graph = new WeightedGraph(6);
         graph.addEdge(0, 1, 7);
@@ -18,6 +18,4 @@ import WeightedGraph;
 
         System.out.println("The shortest path from node 0 to node 5 is " + distances[5]);
     }
-}
-    
 }
