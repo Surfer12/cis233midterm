@@ -43,6 +43,73 @@
 | Delete    | O(log n)| O(n)  |
 | Traverse  | O(n)    | O(n)  |
 
+Great question! The worst-case time complexity of O(n) for BST operations occurs when the Binary Search Tree becomes severely unbalanced, essentially degenerating into a linked list.
+
+Here's a detailed explanation:
+
+### Worst-Case Scenario: Skewed Tree
+
+Imagine inserting elements in a sorted order:
+```
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+```
+
+In this scenario:
+- Each new node is added as the right child
+- The tree becomes a linear structure (essentially a linked list)
+- Height of the tree becomes equal to the number of nodes (n)
+
+### Impact on Operations
+
+1. **Search**: 
+   - Best/Average Case (Balanced Tree): O(log n)
+   - Worst Case (Skewed Tree): O(n) 
+   - You might need to traverse almost all nodes to find a specific element
+
+2. **Insert**: 
+   - Best/Average Case (Balanced Tree): O(log n)
+   - Worst Case (Skewed Tree): O(n)
+   - Each new insertion requires traversing the entire height of the tree
+
+3. **Delete**: 
+   - Best/Average Case (Balanced Tree): O(log n)
+   - Worst Case (Skewed Tree): O(n)
+   - Finding the node to delete takes linear time
+
+### Solution: Self-Balancing Trees
+
+To prevent this worst-case scenario, we use self-balancing trees like:
+- AVL Trees
+- Red-Black Trees
+- Splay Trees
+
+These trees automatically restructure themselves to maintain a balanced structure, ensuring O(log n) operations.
+
+### Example Code Demonstrating Worst Case
+
+```java
+// Worst-case insertion creating a skewed tree
+Node insert(Node root, int key) {
+    if (root == null) return new Node(key);
+    
+    // Always inserting to the right creates a linear structure
+    root.right = insert(root.right, key);
+    return root;
+}
+```
+
+In this implementation, if you insert [1, 2, 3, 4, 5] in order, you'll create a completely right-skewed tree with O(n) complexity for subsequent operations.
+
+The key takeaway is that the efficiency of a BST depends on its structure. A balanced tree provides logarithmic time complexity, while an unbalanced tree can degrade to linear time complexity.
+
 ### Common BST Operations
 ```java
 // Insert
@@ -109,6 +176,98 @@ void postorder(Node node) {
 | O(n log n) | Log Linear  | Merge sort                      |
 | O(n²)      | Quadratic   | Nested loops                     |
 | O(2ⁿ)      | Exponential | Recursive Fibonacci              |
+
+Let me break down the difference between O(n log n) and O(log n):
+
+### O(n log n)
+
+1. **Characteristics**:
+   - Grows faster than O(log n)
+   - Typical of efficient sorting algorithms
+   - Common in divide-and-conquer algorithms
+
+2. **Examples**:
+   - Merge Sort
+   - Heap Sort
+   - Quick Sort (average case)
+
+3. **Visualization**:
+````
+n log n grows much more quickly:
+n = 10:   10 * log(10)  ≈ 33
+n = 100:  100 * log(100) ≈ 664
+n = 1000: 1000 * log(1000) ≈ 9,966
+````
+
+### O(log n)
+
+1. **Characteristics**:
+   - Very slow growth
+   - Typical of divide-and-half algorithms
+   - Often seen in binary search or balanced tree operations
+
+2. **Examples**:
+   - Binary Search
+   - Balanced BST operations
+   - Certain recursive algorithms that halve the problem size
+
+3. **Visualization**:
+````
+log n grows extremely slowly:
+n = 10:   log(10)  ≈ 3.3
+n = 100:  log(100) ≈ 6.6
+n = 1000: log(1000) ≈ 10
+````
+
+### Comparison
+
+| Aspect | O(n log n) | O(log n) |
+|--------|------------|----------|
+| Growth Rate | Linearithmic | Logarithmic |
+| Scalability | Slower | Very Fast |
+| Typical Use | Sorting, Complex Divide-Conquer | Search, Balanced Trees |
+
+### Practical Analogy
+
+Think of O(n log n) like climbing stairs while solving a puzzle at each step.
+Think of O(log n) like taking an express elevator that skips most floors.
+
+### Code Example Illustrating Difference
+
+````python
+# O(n log n) - Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])      # Dividing takes log n
+    right = merge_sort(arr[mid:])     # Dividing takes log n
+    
+    return merge(left, right)         # Merging takes n time
+
+# O(log n) - Binary Search
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2     # Halving each iteration
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1            # Discard left half
+        else:
+            right = mid - 1           # Discard right half
+    
+    return -1
+````
+
+### When to Use
+
+- **O(n log n)**: When you need to sort or perform complex divide-and-conquer operations
+- **O(log n)**: When you can repeatedly divide the problem space
+
+The key difference is that O(n log n) multiplies the logarithmic factor by n, making it significantly slower for large inputs compared to O(log n).
 
 ### Space Complexity Common Cases
 1. O(1) - Constant Space:
