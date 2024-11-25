@@ -1,4 +1,4 @@
-package lib/src/main/java/cis233midterm;
+package cis233midterm;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,4 +33,3 @@ public class WeightedGraph {
         }
     }
 }
-

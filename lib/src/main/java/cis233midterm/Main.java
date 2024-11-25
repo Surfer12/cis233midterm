@@ -1,4 +1,4 @@
-import utils.MessageUtils;  
+import cis233midterm.utils.MessageUtils;  
 
 public class Main {
     public static void main(String[] args) {

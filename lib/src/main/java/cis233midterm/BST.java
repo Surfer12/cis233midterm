@@ -1,4 +1,7 @@
-import TreeNode;
+package cis233midterm;
+
+import cis233midterm.TreeNode;
+
 public class BST {
     TreeNode root;
     //Add in order traversal method here

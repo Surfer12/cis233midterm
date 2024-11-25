@@ -1,4 +1,5 @@
-// Write a Java method to perform an in-order traversal of a binary tree. You can assume a Node class with left and right child pointers and an int data field.
+package cis233midterm;
+
 public class InOrderTraversal {
     class TreeNode {
         int data;
