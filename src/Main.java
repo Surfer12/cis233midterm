@@ -1,5 +1,7 @@
-public class Main {
-public class Main {
+import DijkstraGeneric;
+import WeightedGraph;
+
+    public class Main {
     public static void main(String[] args) {
         WeightedGraph graph = new WeightedGraph(6);
         graph.addEdge(0, 1, 7);

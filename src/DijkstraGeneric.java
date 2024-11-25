@@ -1,4 +1,4 @@
-public class DijkstraGeneric {
+
 import java.util.*;
 
 public class DijkstraGeneric {
@@ -32,6 +32,4 @@ public class DijkstraGeneric {
 
         return distances;
     }
-}
-    
 }

@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class WeightedGraph {
 
 public class WeightedGraph {
     private final int vertices;
@@ -41,6 +41,4 @@ public class WeightedGraph {
             return Integer.compare(this.weight, other.weight);
         }
     }
-}
-    
 }
