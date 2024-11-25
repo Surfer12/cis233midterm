@@ -110,6 +110,48 @@ In this implementation, if you insert [1, 2, 3, 4, 5] in order, you'll create a 
 
 The key takeaway is that the efficiency of a BST depends on its structure. A balanced tree provides logarithmic time complexity, while an unbalanced tree can degrade to linear time complexity.
 
+
+Sparse and dense graphs differ in the number of edges relative to the number of vertices. These terms describe the structure of a graph and its edge-to-vertex ratio.
+
+Sparse Graphs
+
+	•	Definition: A graph where the number of edges (￼) is much smaller than the maximum possible edges.
+	•	Mathematically: ￼, where ￼ is the number of vertices.
+	•	In an undirected graph, the maximum number of edges is ￼, and in a directed graph, it is ￼.
+	•	Key Characteristics:
+	1.	Few connections between vertices.
+	2.	Example: A social network where only a few people are connected, or a road map where some remote locations have very few direct roads.
+	•	Examples:
+	•	A tree (￼) is a sparse graph.
+	•	A graph with ￼ vertices and ￼ edges (￼).
+	•	Representation: Often represented with adjacency lists due to their efficient use of memory.
+
+Dense Graphs
+
+	•	Definition: A graph where the number of edges (￼) is close to the maximum possible edges.
+	•	Mathematically: ￼, where ￼ is the number of vertices.
+	•	Key Characteristics:
+	1.	Many connections between vertices.
+	2.	Example: A network where almost everyone is connected to everyone else, or a fully connected computer network.
+	•	Examples:
+	•	A fully connected graph (or complete graph), where every vertex is connected to every other vertex.
+	•	A graph with ￼ vertices and ￼ edges (￼).
+	•	Representation: Often represented with adjacency matrices, as the memory cost of storing all possible connections is not a concern, and operations like edge lookups are faster.
+
+Comparison Table
+
+Feature	Sparse Graph	Dense Graph
+Edge Count	￼	￼
+Connections	Few connections per vertex	Many connections per vertex
+Memory Usage	Low (with adjacency lists)	High (with adjacency matrices)
+Example Use Case	Sparse road networks, trees	Social networks, fully connected graphs
+
+Choosing the Right Representation
+
+	1.	Sparse Graph: Use adjacency lists for memory efficiency.
+	2.	Dense Graph: Use adjacency matrices for faster operations like edge lookup (￼).
+
+
 ### Common BST Operations
 ```java
 // Insert
