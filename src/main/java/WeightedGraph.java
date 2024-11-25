@@ -1,7 +1,7 @@
-
-
+import generic.graphs.Graph;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 // The graph shows:
 
@@ -17,7 +17,7 @@ import java.util.Map;
 
 // NB: It is a weighted graph
 
-public class WeightedGraph {
+public class WeightedGraph implements Graph<Integer> {
     public static void main(String[] args) {
         Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
                 
@@ -37,5 +37,35 @@ public class WeightedGraph {
         for (var entry : graph.entrySet()) {
             System.out.println("Node " + entry.getKey() + " connected to: " + entry.getValue());
         }
+    }
+
+    @Override
+    public void addVertex(Integer vertex) {
+        // Implementation
+    }
+
+    @Override
+    public void addEdge(Integer source, Integer destination) {
+        // Implementation
+    }
+
+    @Override
+    public void removeVertex(Integer vertex) {
+        // Implementation
+    }
+
+    @Override
+    public void removeEdge(Integer source, Integer destination) {
+        // Implementation
+    }
+
+    @Override
+    public Set<Integer> getNeighbors(Integer vertex) {
+        // Implementation
+    }
+
+    @Override
+    public void printGraph() {
+        // Implementation
     }
 }

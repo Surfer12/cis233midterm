@@ -23,4 +23,17 @@ public class GenericDFS<T> implements Graph<T> {
     public Set<T> getNeighbors(T node) {
         return adjacencyList.getOrDefault(node, new HashSet<>());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GenericDFS)) return false;
+        GenericDFS<?> that = (GenericDFS<?>) o;
+        return Objects.equals(adjacencyList, that.adjacencyList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(adjacencyList);
+    }
 }

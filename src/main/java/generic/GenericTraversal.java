@@ -112,3 +112,13 @@ public class GenericTraversal<T> {
         }
     }
 }
+
+// New GenericNode class with left and right properties
+public class GenericNode<T> {
+    T data;
+    GenericNode<T> left;
+    GenericNode<T> right;
+    Set<GenericNode<T>> neighbors;
+
+    // ...existing constructors and methods...
+}

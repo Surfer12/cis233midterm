@@ -2,40 +2,31 @@ package generic;
 import java.util.function.Consumer;
 
 public class InOrderTraversal<T> {
-    public static class TreeNode<T> {
-        T data;
-        TreeNode<T> left;
-        TreeNode<T> right;
-        TreeNode(T item) {
-            data = item; 
-            left = right = null;
-        }
-    }
 
-    public void inOrderTraversal(TreeNode<T> root, Consumer<T> action) {
+    public void inOrderTraversal(GenericNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        inOrderTraversal(root.left, action);
-        action.accept(root.data);
-        inOrderTraversal(root.right, action);
+        inOrderTraversal(root.getLeft(), action);
+        action.accept(root.getData());
+        inOrderTraversal(root.getRight(), action);
     }
 
-    public void preOrderTraversal(TreeNode<T> root, Consumer<T> action) {
+    public void preOrderTraversal(GenericNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        action.accept(root.data);
-        preOrderTraversal(root.left, action);
-        preOrderTraversal(root.right, action);
+        action.accept(root.getData());
+        preOrderTraversal(root.getLeft(), action);
+        preOrderTraversal(root.getRight(), action);
     }
 
-    public void postOrderTraversal(TreeNode<T> root, Consumer<T> action) {
+    public void postOrderTraversal(GenericNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        postOrderTraversal(root.left, action);
-        postOrderTraversal(root.right, action);
-        action.accept(root.data);
+        postOrderTraversal(root.getLeft(), action);
+        postOrderTraversal(root.getRight(), action);
+        action.accept(root.getData());
     }
 }

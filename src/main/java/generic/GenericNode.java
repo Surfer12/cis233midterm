@@ -2,6 +2,7 @@ package generic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GenericNode<T> {
     T data;
@@ -51,4 +52,17 @@ public class GenericNode<T> {
     public void setRight(GenericNode<T> right) {
         this.right = right;
     }   
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GenericNode)) return false;
+        GenericNode<?> that = (GenericNode<?>) o;
+        return Objects.equals(data, that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
+    }
 }

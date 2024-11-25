@@ -1,7 +1,8 @@
-
 package generic.graphs;
 
-class GraphMatrix<T> {
+import java.util.Set;
+
+public class GraphMatrix<T extends Integer> implements Graph<T> {
     private final int vertices;
     private final int[][] adjacencyMatrix;
 
@@ -10,7 +11,13 @@ class GraphMatrix<T> {
         adjacencyMatrix = new int[vertices][vertices];
     }
 
-    public void addEdge(int source, int destination) {
+    @Override
+    public void addVertex(T vertex) {
+        // Implementation
+    }
+
+    @Override
+    public void addEdge(T source, T destination) {
         // For an unweighted graph, simply mark the connection:
         adjacencyMatrix[source][destination] = 1; 
 
@@ -22,15 +29,28 @@ class GraphMatrix<T> {
         // adjacencyMatrix[destination][source] = weight; 
     }
 
-    public void removeEdge(int source, int destination) {
+    @Override
+    public void removeVertex(T vertex) {
+        // Implementation
+    }
+
+    @Override
+    public void removeEdge(T source, T destination) {
         adjacencyMatrix[source][destination] = 0;
         adjacencyMatrix[destination][source] = 0; // For undirected graph
     }
 
-    public boolean hasEdge(int source, int destination) {
+    @Override
+    public boolean hasEdge(T source, T destination) {
         return adjacencyMatrix[source][destination] != 0;
     }
 
+    @Override
+    public Set<T> getNeighbors(T vertex) {
+        // Implementation
+    }
+
+    @Override
     public void printGraph() {
         for (int i = 0; i < vertices; i++) {
             System.out.print("Vertex " + i + " is connected to: ");
