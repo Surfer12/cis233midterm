@@ -107,6 +107,8 @@ Section 3: Data Structures (15 points) Java Design and Object-Oriented Programmi
 
 	1.	(5 points) Given the array [10, 20, 30, 40, 50], construct a balanced binary search tree (BST). Draw the tree structure and provide its in-order traversal.
 	2.	(5 points) Explain the steps involved in performing a breadth-first search (BFS) and outline its time complexity.
+    
+
 	3.	(5 points) Consider the following tree:
 
       10
