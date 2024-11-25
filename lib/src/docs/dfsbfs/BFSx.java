@@ -27,16 +27,8 @@ public class BFSx {
         }
     }
     public static void main(String[] args) {
-        Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
-        graph.put(1, new HashMap<>(Map.of(2, 4, 3, 2))); 
-        graph.put(2, new HashMap<>(Map.of(4, 5, 5, 1))); 
-        graph.put(3, new HashMap<>(Map.of(6, 3))); 
-        graph.put(4, new HashMap<>()); 
-        graph.put(5, new HashMap<>()); 
-        graph.put(6, new HashMap<>());
-
-
         int startNode = 1; // Choose your starting node
         bfs(graph, startNode);
+        
     }
 }
