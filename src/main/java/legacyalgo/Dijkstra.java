@@ -14,37 +14,17 @@ public class Dijkstra {
 
     public static <T> Map<GenericNode<T>, Integer> dijkstra(Map<GenericNode<T>, Map<GenericNode<T>, Integer>> graph, GenericNode<T> source) {
         GenericTraversal<T> traversal = new GenericTraversal<>();
+
+        GenericNode sourceNode = node1; // Choose a source node
+        Map<GenericNode, Integer> shortestDistances = dijkstra(graph, sourceNode);
+
+        System.out.println("Shortest distances from node " + sourceNode.getData() + ":");
+        for (Map.Entry<GenericNode, Integer> entry : shortestDistances.entrySet()) {
+            System.out.println("To node " + entry.getKey().getData() + ": " + entry.getValue());
+        }
         return traversal.dijkstra(graph, source);
     }
-
-// Class to represent the graph and Dijkstra's Algorithm
-class Graph {
-    private final int vertices; // Number of vertices
-    private final List<List<Node>> adjList; // Adjacency List for the graph
-
-    // Constructor
-    public Graph(int vertices) {
-        this.vertices = vertices;
-        adjList = new ArrayList<>();
-        for (int i = 0; i < vertices; i++) {
-            adjList.add(new ArrayList<>());
-        }
-    }
-
-    // Method to add edges to the graph
-    public void addEdge(int source, int destination, int weight) {
-        adjList.get(source).add(new Node(destination, weight));
-        adjList.get(destination).add(new Node(source, weight)); // Since the graph is undirected
-    }
-
-    // Dijkstra's Algorithm implementation
-    public void dijkstra(int startVertex, int endVertex) {
-        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(node -> node.weight));
-        int[] distances = new int[vertices];
-        int[] predecessors = new int[vertices]; // To track the path
-
-        Arrays.fill(distances, Integer.MAX_VALUE);
-        Arrays.fill(predecessors, -1);
+        
         distances[startVertex] = 0;
 
         pq.add(new Node(startVertex, 0));
@@ -91,11 +71,8 @@ class Graph {
     }
 
     public static void main(String[] args) {
-
-
-    
         Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
-        
+
         // Add edges as per the given graph
         graph.put(0, new HashMap<>(Map.of(1, 4, 6, 7))); // Node 0 connected to 1 (weight 4) and 6 (weight 7)
         graph.put(1, new HashMap<>(Map.of(0, 4, 2, 9, 6, 11))); // Node 1 connected to 0, 2, and 6
@@ -112,13 +89,7 @@ class Graph {
         for (var entry : graph.entrySet()) {
             System.out.println("Node " + entry.getKey() + " connected to: " + entry.getValue());
         }
-    }
+    }   
     
-        GenericNode sourceNode = node1; // Choose a source node
-        Map<GenericNode, Integer> shortestDistances = dijkstra(graph, sourceNode);
-
-        System.out.println("Shortest distances from node " + sourceNode.getData() + ":");
-        for (Map.Entry<GenericNode, Integer> entry : shortestDistances.entrySet()) {
-            System.out.println("To node " + entry.getKey().getData() + ": " + entry.getValue());
-        }
-    }
+    
+            
