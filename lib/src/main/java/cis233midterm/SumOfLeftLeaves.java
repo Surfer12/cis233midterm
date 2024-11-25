@@ -1,10 +1,7 @@
-package cis233midterm;
-import TreeNode;
 
-// Given the root of a binary tree, write a code that returns  the sum of all left leaves.
+// Given the root of a binary tree, write a code that returns the sum of all left leaves.
  
 // A leaf is a node with no children. A left leaf is a leaf that is the left child of another node.
- 
 // In the tree below, the sum is 24 i.e, 9+15
  
 // Explain the time complexity of your solution.
@@ -15,6 +12,12 @@ import TreeNode;
 // We visit each node exactly once
 // Constant time operations at each node
 class SolutionToSumLeftLeaves {
+  class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+  } 
   
     public int sumOfLeftLeaves(TreeNode root) {
         // Base case: if root is null, return 0
