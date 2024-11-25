@@ -1,5 +1,4 @@
 package generic.dfs;
-package dfsbfs;
 
 import java.util.*;
 import generic.Graph;
@@ -82,8 +81,4 @@ public class GenericDFS<T> implements Graph<T> {
     public int hashCode() {
         return Objects.hash(adjacencyList);
     }
-}
-
-public class GenericDFS {
-    
 }
