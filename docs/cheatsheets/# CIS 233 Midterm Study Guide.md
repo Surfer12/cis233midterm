@@ -145,6 +145,114 @@ void bfs(int startVertex) {
      - Calculate new distance
      - Update if new distance is shorter
 
+I'll provide pseudocode for the requested traversal algorithms:
+
+### Depth-First Search (DFS) Pseudocode
+```
+function DFS(graph, startVertex):
+    // Create a set to track visited vertices
+    visited = empty set
+    
+    // Helper function for recursive DFS
+    function explore(vertex):
+        // Mark current vertex as visited
+        add vertex to visited
+        print vertex
+        
+        // Explore all unvisited neighbors
+        for each neighbor of vertex in graph:
+            if neighbor is not in visited:
+                explore(neighbor)
+    
+    // Start DFS from the start vertex
+    explore(startVertex)
+```
+
+### Breadth-First Search (BFS) Pseudocode
+```
+function BFS(graph, startVertex):
+    // Create a queue for vertices to visit
+    queue = empty queue
+    
+    // Create a set to track visited vertices
+    visited = empty set
+    
+    // Add start vertex to queue and mark as visited
+    add startVertex to queue
+    add startVertex to visited
+    
+    while queue is not empty:
+        // Dequeue a vertex
+        currentVertex = remove first vertex from queue
+        print currentVertex
+        
+        // Explore all unvisited neighbors
+        for each neighbor of currentVertex in graph:
+            if neighbor is not in visited:
+                add neighbor to queue
+                add neighbor to visited
+```
+
+### Binary Search Tree Traversals Pseudocode
+
+#### Preorder Traversal (Root-Left-Right)
+```
+function preorderTraversal(node):
+    if node is null:
+        return
+    
+    // Process root first
+    print node.value
+    
+    // Then left subtree
+    preorderTraversal(node.left)
+    
+    // Then right subtree
+    preorderTraversal(node.right)
+```
+
+#### Inorder Traversal (Left-Root-Right)
+```
+function inorderTraversal(node):
+    if node is null:
+        return
+    
+    // First traverse left subtree
+    inorderTraversal(node.left)
+    
+    // Then process root
+    print node.value
+    
+    // Then traverse right subtree
+    inorderTraversal(node.right)
+```
+
+#### Postorder Traversal (Left-Right-Root)
+```
+function postorderTraversal(node):
+    if node is null:
+        return
+    
+    // First traverse left subtree
+    postorderTraversal(node.left)
+    
+    // Then traverse right subtree
+    postorderTraversal(node.right)
+    
+    // Finally process root
+    print node.value
+```
+
+Key Differences Explained:
+- DFS explores as far as possible along each branch before backtracking
+- BFS explores all neighbors at the current depth before moving to the next depth level
+- Tree traversals differ in the order of processing the current node relative to its left and right subtrees:
+  - Preorder: Root → Left → Right
+  - Inorder: Left → Root → Right
+  - Postorder: Left → Right → Root
+
+These pseudocode examples provide a clear, language-agnostic representation of the traversal algorithms, highlighting their core logic and structure.
+
 ## Practice Problems
 
 1. Time/Space Complexity:
