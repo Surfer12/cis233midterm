@@ -1,15 +1,10 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": ["lib", "src"], 
     "java.project.outputPath": "bin",
+    "java.runtime.configuration.updateBuildConfiguration": "automatic",
+    "java.runtime.version": "23",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-23",
-            "path": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
-        }
-    ]
-}
+    "java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
+}     
