@@ -298,6 +298,16 @@ int binarySearch(int[] arr, int target) {
 }
 ```
 
+## Private Members in Subclasses
+
+A subclass does not inherit private members of its superclass directly. However, the private members can still be accessed indirectly through:
+	1.	Public or protected methods in the superclass that expose or modify the private members.
+	2.	Getter and Setter methods, if provided, which allow controlled access to private members.
+
+For example, private fields in the superclass are not directly accessible in the subclass, but the subclass can still interact with them using any accessible methods defined in the superclass.
+
+
+
 ### Common Tree Operation Complexities
 
 #### Space Complexity
