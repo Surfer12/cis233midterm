@@ -1,20 +1,30 @@
-Mock Midterm Exam
+Mock Midterm Exam   Java Design and Object-Oriented Programming in Java exclusively.
 
 Duration: 60 minutes
 Instructions: Attempt all questions. Write clear and concise answers. Use proper Java syntax for coding questions. You may use a timer to simulate test-like conditions.
 
-Section 1: Conceptual Questions (15 points)
+Section 1: Conceptual Questions (15 points) Java Design and Object-Oriented Programming in Java exclusively.
 
 	1.	(5 points) Define the following terms:
-	•	Depth of a tree -- The depths of a tree is the number of edges on the path from the root to the node.
-	•	Height of a tree -- The height of a tree is the number of edges on the longest path from the root to a leaf node. ( This is the same as the depth of the deepest node in the tree.)
-	•	Binary Search Tree (BST) -- A BST is a binary tree in which for each node, the value of all the nodes in the left subtree is less than the value of the node, and the value of all the nodes in the right subtree is greater than the value of the node.
-	•	Auxiliary Space -- The auxiliary space is the space required by an algorithm to complete its execution, excluding the space for input data.
-	•	Encapsulation -- Encapsulation is the process of hiding the implementation details of a class from the outside world.
-	2.	(5 points) Explain the difference between polymorphism and inheritance in object-oriented programming with examples.
+	•	Depth of a tree 
+     The depths of a tree is the number of edges on the path from the root to the node.
+	•	Height of a tree 
+    The height of a tree is the number of edges on the longest path from the root to a leaf node. ( This is the same as the depth of the deepest node in the tree.)
+	•	Binary Search Tree (BST) 
+    A BST is a binary tree in which for each node, the value of all the nodes in the left subtree is less than the value of the node, and the value of all the nodes in the right subtree is greater than the value of the node.
+	•	Auxiliary Space 
+    The auxiliary space is the space required by an algorithm to complete its execution, excluding the space for input data.
+	•	Encapsulation 
+    Encapsulation is the process of hiding the implementation details of a class from the outside world.
+	2.	(5 points) Explain the difference between polymorphism and inheritance in object-oriented programming with examples. 
+	3.	(5 points) Describe how the space complexity of a recursive algorithm is determined and give an example of an algorithm with O(log n) space complexity.
+       Polymorphism in java is the ability of an object to take on many forms. 
+       An example of polymorphism is the ability of a car to take on many forms, such as a sedan, SUV, and truck. 
+       Then the car can be treated as a single object, and its properties and methods can be used in different contexts.
+       Inheritance is the ability of a class to inherit properties and methods from another class.
 	3.	(5 points) Describe how the space complexity of a recursive algorithm is determined and give an example of an algorithm with O(log n) space complexity.
 
-Section 2: Algorithm Analysis (15 points)
+Section 2: Algorithm Analysis (15 points) Java Design and Object-Oriented Programming in Java exclusively.
 
 	1.	(5 points) Analyze the time complexity of the following Java method:
 
@@ -32,7 +42,7 @@ public int findMax(int[] arr) {
 	2.	(5 points) Write a recursive function to calculate the power of a number (base^exponent). Explain its time complexity.
 	3.	(5 points) In a sorted array of size 128, how many comparisons would a binary search require in the worst case? Show your calculations.
 
-Section 3: Data Structures (15 points)
+Section 3: Data Structures (15 points) Java Design and Object-Oriented Programming in Java exclusively.
 
 	1.	(5 points) Given the array [10, 20, 30, 40, 50], construct a balanced binary search tree (BST). Draw the tree structure and provide its in-order traversal.
 	2.	(5 points) Explain the steps involved in performing a breadth-first search (BFS) and outline its time complexity.
@@ -46,7 +56,7 @@ Section 3: Data Structures (15 points)
 
 Perform a post-order traversal and list the nodes in the order they are visited.
 
-Section 4: Coding Questions (25 points)
+Section 4: Coding Questions (25 points) Java Design and Object-Oriented Programming in Java exclusively.
 
 	1.	(10 points) Implement a Java class for a binary tree node and write a method for in-order traversal:
 
@@ -76,7 +86,7 @@ Good luck!
 
 Okay, I can help you create a mock midterm exam using the materials provided. Here's a possible structure for your exam, along with some sample questions:
 
-**Section 1: Algorithm Analysis (25 points)**
+**Section 1: Algorithm Analysis (25 points) Java Design and Object-Oriented Programming in Java exclusively.**
 
 * **Question 1 (10 points):**
     * What is time complexity? [cite: 2, 8]
@@ -95,7 +105,7 @@ Okay, I can help you create a mock midterm exam using the materials provided. He
 * **Question 3 (5 points):**
     * Analyze the following code snippet and determine its time and space complexity.
 
-**Section 2: Trees (25 points)**
+**Section 2: Trees (25 points) Java Design and Object-Oriented Programming in Java exclusively.**
 
 * **Question 1 (10 points):**
     * What is a binary tree? [cite: 284, 285]
@@ -110,7 +120,7 @@ Okay, I can help you create a mock midterm exam using the materials provided. He
 
 * **Question 3 (5 points):**
     * Draw a BST based on the following array: [5, 2, 8, 1, 4, 7, 9]
-
+        
 **Section 3: OOP (25 points)**
 
 * **Question 1 (15 points):**
@@ -128,7 +138,7 @@ Okay, I can help you create a mock midterm exam using the materials provided. He
         * Flexibility [cite: 156]
         * Maintainability
 
-**Section 4: Graph Algorithms (25 points)**
+**Section 4: Graph Algorithms (25 points) Java Design and Object-Oriented Programming in Java exclusively.**
 
 * **Question 1 (10 points):**
     * Explain the steps involved in the Breadth-First Search (BFS) algorithm. [cite: 41, 42, 43]
