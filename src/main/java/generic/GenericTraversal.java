@@ -67,7 +67,7 @@ public class GenericTraversal<T> {
     }
 
     // Method to perform Dijkstra's algorithm using the Node class
-    public Map<GenericNode<T>, Integer> dijkstra(Map<GenericNode<T>, Map<GenericNode<T>, Integer>> graph, GenericNode<T> source) {
+    public Map<GenericNode<T>, Integer> dijkstra(Graph<T> graph, GenericNode<T> source) {
         Map<GenericNode<T>, Integer> distances = new HashMap<>();
         Set<GenericNode<T>> visited = new HashSet<>();
         PriorityQueue<NodeDistancePair> pq = new PriorityQueue<>(Comparator.comparingInt(pair -> pair.distance));

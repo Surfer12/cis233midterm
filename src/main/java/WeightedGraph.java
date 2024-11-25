@@ -22,15 +22,12 @@ public class WeightedGraph implements Graph<Integer> {
         Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
                 
         // Add edges as per the given graph
-        graph.put(0, new HashMap<>(Map.of(1, 4, 6, 7))); // Node 0 connected to 1 (weight 4) and 6 (weight 7)
-        graph.put(1, new HashMap<>(Map.of(0, 4, 2, 9, 6, 11))); // Node 1 connected to 0, 2, and 6
-        graph.put(2, new HashMap<>(Map.of(1, 9, 3, 6, 4, 2))); // Node 2 connected to 1, 3, and 4
-        graph.put(3, new HashMap<>(Map.of(2, 6, 4, 10, 5, 15))); // Node 3 connected to 2, 4, and 5
-        graph.put(4, new HashMap<>(Map.of(2, 2, 3, 10, 5, 5, 7, 1, 8, 12))); // Node 4 connected to multiple nodes
-        graph.put(5, new HashMap<>(Map.of(3, 15, 4, 5, 8, 12))); // Node 5 connected to 3, 4, and 8
-        graph.put(6, new HashMap<>(Map.of(0, 7, 1, 11, 7, 1))); // Node 6 connected to 0, 1, and 7
-        graph.put(7, new HashMap<>(Map.of(4, 1, 6, 1, 8, 3))); // Node 7 connected to 4, 6, and 8
-        graph.put(8, new HashMap<>(Map.of(4, 12, 5, 12, 7, 3))); // Node 8 connected to 4, 5, and 7
+        graph.put(1, new HashMap<>(Map.of(2, 4, 3, 2))); // Node 1 connected to 2 (weight 4) and 3 (weight 2)
+        graph.put(2, new HashMap<>(Map.of(4, 5, 5, 1))); // Node 2 connected to 4 (weight 5) and 5 (weight 1)
+        graph.put(3, new HashMap<>(Map.of(6, 3))); // Node 3 connected to 6 (weight 3)
+        graph.put(4, new HashMap<>()); // Node 4 has no outgoing edges
+        graph.put(5, new HashMap<>()); // Node 5 has no outgoing edges
+        graph.put(6, new HashMap<>()); // Node 6 has no outgoing edges
         
         // Print the graph
         System.out.println("Graph representation (Adjacency Map):");
@@ -47,6 +44,11 @@ public class WeightedGraph implements Graph<Integer> {
     @Override
     public void addEdge(Integer source, Integer destination) {
         // Implementation
+    }
+
+    @Override
+    public void addEdge(Integer source, Integer destination, int weight) {
+        // Implementation to add weighted edge
     }
 
     @Override

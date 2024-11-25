@@ -1,5 +1,6 @@
 package generic.graphs;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class GraphMatrix<T extends Integer> implements Graph<T> {
@@ -47,7 +48,14 @@ public class GraphMatrix<T extends Integer> implements Graph<T> {
 
     @Override
     public Set<T> getNeighbors(T vertex) {
-        // Implementation
+        Set<T> neighbors = new HashSet<>();
+        int v = vertex;
+        for (int i = 0; i < vertices; i++) {
+            if (adjacencyMatrix[v][i] != 0) {
+                neighbors.add((T) Integer.valueOf(i));
+            }
+        }
+        return neighbors;
     }
 
     @Override

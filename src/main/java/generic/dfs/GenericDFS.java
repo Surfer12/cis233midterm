@@ -1,14 +1,23 @@
-package generic.graphs;
+package generic.dfs;
+package dfsbfs;
 
-import generic.Graph;
 import java.util.*;
+import generic.Graph;
 
+public class GenericDFS<T> implements Graph<T> {
+    private Map<T, Set<T>> adjacencyList = new HashMap<>();
+    
+    public void dfs(T node, Set<T> visited, Graph<T> graph) {
+        if (node == null) return;
 
-public class GraphList<T> implements Graph<T> {
-    private Map<T, Set<T>> adjacencyList;
+        visited.add(node);
+        System.out.print(node + " ");
 
-    public GraphList() {
-        adjacencyList = new HashMap<>();
+        for (T neighbor : graph.getNeighbors(node)) {
+            if (!visited.contains(neighbor)) {
+                dfs(neighbor, visited, graph);
+            }
+        }
     }
 
     @Override
@@ -28,10 +37,7 @@ public class GraphList<T> implements Graph<T> {
 
     @Override
     public void addEdge(T source, T destination, int weight) {
-        adjacencyList.putIfAbsent(source, new HashSet<>());
-        adjacencyList.putIfAbsent(destination, new HashSet<>());
-        // Assuming adjacencyList now holds weighted edges, update accordingly
-        // Example: adjacencyList.get(source).add(new Edge(destination, weight));
+        // Implementation for adding weighted edges
     }
 
     @Override
@@ -49,13 +55,6 @@ public class GraphList<T> implements Graph<T> {
     public void removeEdge(T source, T destination) {        
         adjacencyList.get(source).remove(destination);
         adjacencyList.get(destination).remove(source);     
-        // Removed the following lines to prevent unintended vertex removal
-        // if (adjacencyList.get(source).isEmpty()) {
-        //     adjacencyList.remove(source);   
-        //     if (adjacencyList.get(destination).isEmpty()) {
-        //         adjacencyList.remove(destination);
-        //     }
-        // }
     }
 
     @Override
@@ -71,16 +70,20 @@ public class GraphList<T> implements Graph<T> {
         }
     }
 
-    public static void main(String[] args) {
-        GraphList<Integer> graph = new GraphList<>();
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 4);
-        graph.addEdge(1, 2);
-        graph.addEdge(1, 3);
-        graph.addEdge(1, 4);
-        graph.addEdge(2, 3);
-        graph.addEdge(3, 4);
-
-        graph.printGraph();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GenericDFS)) return false;
+        GenericDFS<?> that = (GenericDFS<?>) o;
+        return Objects.equals(adjacencyList, that.adjacencyList);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(adjacencyList);
+    }
+}
+
+public class GenericDFS {
+    
 }
