@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "WeightedGraph",
+            "request": "launch",
+            "mainClass": "WeightedGraph",
+            "projectName": "cis233midterm"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -59,6 +65,6 @@
             "request": "launch",
             "mainClass": "djikstra",
             "projectName": "cis233midterm"
-        }      
+        }
     ]
 }
