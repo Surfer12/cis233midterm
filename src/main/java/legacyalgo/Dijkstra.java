@@ -1,6 +1,8 @@
+
+package legacyalgo;
+
 import java.util.*;
-import cis233midterm.Node;
-import cis233midterm.GenericTraversal;
+
 public class Dijkstra {
 
     public static Map<Node, Integer> dijkstra(Map<Node, Map<Node, Integer>> graph, Node source) {

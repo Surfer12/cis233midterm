@@ -2,7 +2,7 @@
     "java.project.sourcePaths": ["lib", "src", "docs", "main", "java", "cis233midterm", "test", "legacyalgo"],
     "java.project.outputPath": "bin",
     "java.project.buildScriptManagement.buildFile": "build.gradle",
-    "java.project.buildScriptManagement.enabled": true,
+    "java.project.buildScriptManagement.enabled": false,
     "java.runtime.configuration.updateBuildConfiguration": "automatic",
     "java.runtime.version": "23",
     "java.project.referencedLibraries": [
