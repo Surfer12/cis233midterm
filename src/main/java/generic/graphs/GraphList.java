@@ -2,38 +2,45 @@ package generic.graphs;
 
 import java.util.*;
 
-class GraphList<T> {
-    private final int vertices;
-    private final LinkedList<T>[] adjList;
+public class GraphList<T> implements Graph<T> {
+    private Map<T, List<T>> adjList;
 
-    public GraphList(int vertices) {
-        this.vertices = vertices;
-        adjList = new LinkedList[vertices];
-        for (int i = 0; i < vertices; i++) {
-            adjList[i] = new LinkedList<>();
+    public GraphList() {
+        adjList = new HashMap<>();
+    }
+
+    public void addVertex(T vertex) {
+        if (!adjList.containsKey(vertex)) {
+            adjList.put(vertex, new ArrayList<>());
         }
     }
 
     public void addEdge(T source, T destination) {
-        adjList[source].add(destination);
-
-        // For an undirected graph, add the reverse edge:
-        adjList[destination].add(source); 
+        addVertex(source);
+        addVertex(destination);
+        adjList.get(source).add(destination);
+        adjList.get(destination).add(source); // For undirected graph
     }
 
     public void removeEdge(T source, T destination) {
-        adjList[source].remove(destination); // Remove by value
-        adjList[destination].remove(destination); // For undirected
+        if (adjList.containsKey(source) && adjList.containsKey(destination)) {
+            adjList.get(source).remove(destination);
+            adjList.get(destination).remove(source);
+        }
     }
 
     public boolean hasEdge(T source, T destination) {
-        return adjList[source].contains(destination);
+        return adjList.containsKey(source) && adjList.get(source).contains(destination);
+    }
+
+    public List<T> getNeighbors(T vertex) {
+        return adjList.getOrDefault(vertex, new ArrayList<>());
     }
 
     public void printGraph() {
-        for (int i = 0; i < vertices; i++) {
-            System.out.print("Vertex " + i + " is connected to: ");
-            for (T neighbor : adjList[i]) {
+        for (T vertex : adjList.keySet()) {
+            System.out.print("Vertex " + vertex + " is connected to: ");
+            for (T neighbor : adjList.get(vertex)) {
                 System.out.print(neighbor + " ");
             }
             System.out.println();
@@ -41,7 +48,7 @@ class GraphList<T> {
     }
 
     public static void main(String[] args) {
-        GraphList<Integer> graph = new GraphList<>(5);
+        GraphList<Integer> graph = new GraphList<>();
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);
