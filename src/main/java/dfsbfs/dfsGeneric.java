@@ -3,7 +3,7 @@ package dfsbfs;
 import java.util.HashSet;
 import java.util.Set;
 
-public class dfs<T> {
+public class dfsGeneric<T> {
     Node<T> root;
 
     void dfs(Node<T> root) {

@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.Set;
 
 
-public class bfs<T> {
+public class bfsGeneric<T> {
     Node<T> root;
 
     public void bfs(Node<T> root) {

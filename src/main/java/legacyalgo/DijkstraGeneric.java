@@ -7,7 +7,6 @@ submit a pdf document. */
 package legacyalgo;
 
 import generic.GenericNode;
-import generic.GenericTraversal;
 import java.util.*;
 
 public class DijkstraGeneric {

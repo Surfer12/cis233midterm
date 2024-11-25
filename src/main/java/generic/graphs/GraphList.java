@@ -14,7 +14,9 @@ public class GraphList<T> implements Graph<T> {
     public void addVertex(T vertex) {
         if (!adjacencyList.containsKey(vertex)) {
             adjacencyList.put(vertex, new HashSet<>());
+            System.out.println("Vertex " + vertex + " added");
         }
+    }
     public void addNode(T node) {
         adjacencyList.putIfAbsent(node, new HashSet<>());
     }
