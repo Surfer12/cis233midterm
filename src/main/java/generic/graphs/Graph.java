@@ -9,4 +9,6 @@ public interface Graph<T> {
     void removeEdge(T source, T destination);
     Set<T> getNeighbors(T vertex);
     void printGraph();
+
+    public int getVertices();
 }

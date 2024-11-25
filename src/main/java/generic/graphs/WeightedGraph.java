@@ -72,4 +72,16 @@ public class WeightedGraph implements Graph<Integer> {
     public void printGraph() {
         // Implementation
     }
+
+    public static class Node {
+
+        public int vertex;
+
+        public Node() {
+        }
+
+        public Node(int startVertex, int i) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+    }
 }
