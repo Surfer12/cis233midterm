@@ -1,0 +1,36 @@
+
+nested HashMap, 
+// - The outer key represents the source vertex
+// - The inner map represents the destination vertices and their edge weights
+
+// Here's a textual representation of the graph:
+
+// - Vertex 1 connects to:
+//   - Vertex 2 with weight 4
+//   - Vertex 3 with weight 2
+
+// - Vertex 2 connects to:
+//   - Vertex 4 with weight 5
+//   - Vertex 5 with weight 1
+
+// - Vertex 3 connects to:
+//   - Vertex 6 with weight 3
+
+// - Vertices 4, 5, and 6 have no outgoing edges
+
+// Visual Graph Representation:
+```
+    4
+1 ------> 2 -----> 4
+|  \      |
+2    5    5 
+|     \   |
+v      v  v
+3 -----> 6
+```
+
+Key observations:
+1. This is a directed weighted graph
+2. Not all vertices have connections
+3. Weights are shown on the edges
+4. Some vertices (4, 5, 6) are "terminal" or have no outgoing edges

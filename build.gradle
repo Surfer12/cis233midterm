@@ -31,12 +31,16 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
 
-application {
-    mainClassName = 'dfsbfs.BFSx'
-}
-
 run {
     standardInput = System.in
 }
 
+sourceSets {
+    main {
+        java {  
+            srcDirs = ['lib/src/docs/dfsbfs', 'src/main/java/cis233midterm', 'lib/src/docs/graphs']
+        }
+    }
+}
 
+mainClassName = 'cis233midterm.SumOfLeftLeaves'
