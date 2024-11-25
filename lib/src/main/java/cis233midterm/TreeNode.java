@@ -1,11 +1,11 @@
 package cis233midterm;
 
-public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+public class TreeNode<T> {
+    T val;
+    TreeNode<T> left;
+    TreeNode<T> right;
     
-    TreeNode(int val) {
+    TreeNode(T val) {
         this.val = val;
     }
 }

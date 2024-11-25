@@ -1,6 +1,4 @@
-
-
-class GraphMatrix {
+class GraphMatrix<T> {
     private final int vertices;
     private final int[][] adjacencyMatrix;
 
@@ -43,7 +41,7 @@ class GraphMatrix {
     }
 
     public static void main(String[] args) {
-        GraphMatrix graph = new GraphMatrix(5);
+        GraphMatrix<Integer> graph = new GraphMatrix<>(5);
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);

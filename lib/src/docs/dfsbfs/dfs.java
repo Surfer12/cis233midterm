@@ -1,27 +1,34 @@
 import java.util.HashSet;
 import java.util.Set;
-import lib.src.main.java.cis233midterm.Node;
 
+public class dfs<T> {
+    Node<T> root;
 
-
-public class dfs {
-    Node root;
-
-    void dfs(Node root) {
+    void dfs(Node<T> root) {
         if (root == null) return;
         
-    Set<Node> visited = new HashSet<>();
-    dfsRecursive(root, visited);
-}
+        Set<Node<T>> visited = new HashSet<>();
+        dfsRecursive(root, visited);
+    }
 
-void dfsRecursive(Node node, Set<Node> visited) {
-    visited.add(node);
-    System.out.print(node.val + " ");
-    
-    for (Node neighbor : node.neighbors) {
-        if (!visited.contains(neighbor)) {
-            dfsRecursive(neighbor, visited);
+    void dfsRecursive(Node<T> node, Set<Node<T>> visited) {
+        visited.add(node);
+        System.out.print(node.val + " ");
+        
+        for (Node<T> neighbor : node.neighbors) {
+            if (!visited.contains(neighbor)) {
+                dfsRecursive(neighbor, visited);
+            }
+        }
+    }
+
+    static class Node<T> {
+        T val;
+        Set<Node<T>> neighbors;
+
+        Node(T val) {
+            this.val = val;
+            this.neighbors = new HashSet<>();
         }
     }
 }
-

@@ -1,8 +1,8 @@
 import java.util.*;
 
-class GraphList {
+class GraphList<T> {
     private final int vertices;
-    private final LinkedList<Integer>[] adjList;
+    private final LinkedList<T>[] adjList;
 
     public GraphList(int vertices) {
         this.vertices = vertices;
@@ -12,26 +12,26 @@ class GraphList {
         }
     }
 
-    public void addEdge(int source, int destination) {
+    public void addEdge(T source, T destination) {
         adjList[source].add(destination);
 
         // For an undirected graph, add the reverse edge:
         adjList[destination].add(source); 
     }
 
-    public void removeEdge(int source, int destination) {
-        adjList[source].remove(Integer.valueOf(destination)); // Remove by value
-        adjList[destination].remove(Integer.valueOf(source)); // For undirected
+    public void removeEdge(T source, T destination) {
+        adjList[source].remove(destination); // Remove by value
+        adjList[destination].remove(destination); // For undirected
     }
 
-    public boolean hasEdge(int source, int destination) {
+    public boolean hasEdge(T source, T destination) {
         return adjList[source].contains(destination);
     }
 
     public void printGraph() {
         for (int i = 0; i < vertices; i++) {
             System.out.print("Vertex " + i + " is connected to: ");
-            for (int neighbor : adjList[i]) {
+            for (T neighbor : adjList[i]) {
                 System.out.print(neighbor + " ");
             }
             System.out.println();
@@ -39,7 +39,7 @@ class GraphList {
     }
 
     public static void main(String[] args) {
-        GraphList graph = new GraphList(5);
+        GraphList<Integer> graph = new GraphList<>(5);
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);
