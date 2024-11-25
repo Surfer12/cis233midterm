@@ -1,8 +1,8 @@
-import Node;
+import TreeNode;
 public class BST {
-    Node root;
+    TreeNode root;
     //Add in order traversal method here
-    public void inOrderTraversal(Node root) {
+    public void inOrderTraversal(TreeNode root) {
         if (root != null) {
             inOrderTraversal(root.left);
             System.out.println(root.data);

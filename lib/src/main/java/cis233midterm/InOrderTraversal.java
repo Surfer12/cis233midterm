@@ -1,5 +1,6 @@
+import TreeNode;
 public class InOrderTraversal {
-    public void inOrderTraversal(Node root) {
+    public void inOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
