@@ -18,4 +18,20 @@ public class InOrderTraversal {
         System.out.println(root.data);
         inOrderTraversal(root.right);
     }
+    public void preOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.data);
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+    public void postOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.println(root.data);
+    }
 }
