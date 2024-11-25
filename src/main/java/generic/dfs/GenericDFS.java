@@ -6,6 +6,7 @@ import generic.Graph;
 public class GenericDFS<T> implements Graph<T> {
     private Map<T, Set<T>> adjacencyList = new HashMap<>();
     
+    @Override
     public void dfs(T node, Set<T> visited, Graph<T> graph) {
         if (node == null) return;
 

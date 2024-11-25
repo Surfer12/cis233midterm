@@ -73,9 +73,20 @@ public class WeightedGraph implements Graph<Integer> {
         // Implementation
     }
 
+    @Override
+    public int getVertices() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Object getAdjList() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public static class Node {
 
         public int vertex;
+        public int weight;
 
         public Node() {
         }

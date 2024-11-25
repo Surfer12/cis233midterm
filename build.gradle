@@ -63,17 +63,6 @@ jacoco {
     toolVersion = '0.8.10'
 }
 
-tasks.register('fatJar', Jar) {
-    archiveClassifier = 'all'
-    manifest {
-        attributes 'Main-Class': 'cis233midterm.SumOfLeftLeaves'
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    with tasks.jar
-}
-
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport

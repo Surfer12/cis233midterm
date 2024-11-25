@@ -11,4 +11,6 @@ public interface Graph<T> {
     void printGraph();
 
     public int getVertices();
+
+    public Object getAdjList();
 }
