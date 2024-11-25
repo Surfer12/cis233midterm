@@ -36,7 +36,7 @@ run {
 sourceSets {
     main {
         java {  
-            srcDirs = ['lib/src/docs/dfsbfs', 'src/main/java/cis233midterm', 'lib/src/docs/graphs']
+            srcDirs = ['lib/src/docs/dfsbfs', 'src/main/java/cis233midterm', 'lib/src/docs/graphs', 'lib/src/docs/miscquestions', 'lib/src/main/java/cis233midterm', 'lib/src/main/java/cis233midterm']
         }
     }
 }
