@@ -1,3 +1,9 @@
+import generic.graphs.GraphMatrix;
+import generic.graphs.WeightedGraph;
+import generic.graphs.GraphList;    
+import generic.*;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         WeightedGraph graph = new WeightedGraph(6);

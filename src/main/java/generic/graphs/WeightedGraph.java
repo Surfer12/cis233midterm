@@ -1,7 +1,9 @@
-import generic.graphs.Graph;
+package generic.graphs;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 // The graph shows:
 
@@ -18,6 +20,17 @@ import java.util.Set;
 // NB: It is a weighted graph
 
 public class WeightedGraph implements Graph<Integer> {
+    private int vertices;
+    private List<List<Edge>> adjacencyList;
+
+    public WeightedGraph(int vertices) {
+        this.vertices = vertices;
+        adjacencyList = new ArrayList<>(vertices);
+        for (int i = 0; i < vertices; i++) {
+            adjacencyList.add(new ArrayList<>());
+        }
+    }
+
     public static void main(String[] args) {
         Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
                 
