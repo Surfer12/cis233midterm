@@ -1,38 +1,40 @@
-package cis233midterm;
+import java.util.function.Consumer;
 
-public class InOrderTraversal {
+public class InOrderTraversal<T> {
     class TreeNode {
-        int data;
+        T data;
         TreeNode left;
         TreeNode right;
-        TreeNode(int item) {
+        TreeNode(T item) {
             data = item; 
             left = right = null;
         }
     }
 
-    public void inOrderTraversal(TreeNode root) {
+    public void inOrderTraversal(TreeNode root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        inOrderTraversal(root.left);
-        System.out.println(root.data);
-        inOrderTraversal(root.right);
+        inOrderTraversal(root.left, action);
+        action.accept(root.data);
+        inOrderTraversal(root.right, action);
     }
-    public void preOrderTraversal(TreeNode root) {
+
+    public void preOrderTraversal(TreeNode root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        System.out.println(root.data);
-        preOrderTraversal(root.left);
-        preOrderTraversal(root.right);
+        action.accept(root.data);
+        preOrderTraversal(root.left, action);
+        preOrderTraversal(root.right, action);
     }
-    public void postOrderTraversal(TreeNode root) {
+
+    public void postOrderTraversal(TreeNode root, Consumer<T> action) {
         if (root == null) {
             return;
         }
-        postOrderTraversal(root.left);
-        postOrderTraversal(root.right);
-        System.out.println(root.data);
+        postOrderTraversal(root.left, action);
+        postOrderTraversal(root.right, action);
+        action.accept(root.data);
     }
 }
