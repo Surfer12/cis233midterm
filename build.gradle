@@ -5,3 +5,39 @@
  * Learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.11/samples
  * This project uses @Incubating APIs which are subject to change.
  */
+
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+version = '1.2.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':lib')
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+application {
+    mainClassName = 'Main'
+}
+
+run {
+    standardInput = System.in
+}
+
+

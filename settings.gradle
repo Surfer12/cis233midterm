@@ -7,3 +7,6 @@
  */
 
 rootProject.name = 'cis233midterm'
+include 'lib'
+
+
