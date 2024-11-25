@@ -1,3 +1,5 @@
+package generic.graphs;
+
 class GraphMatrix<T> {
     private final int vertices;
     private final int[][] adjacencyMatrix;

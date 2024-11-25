@@ -1,6 +1,6 @@
+package bst;
 
-
-import lib.src.docs.legacyalgo.Node;
+import Node;
 
 public class BinarySearchTree {
         Node root;

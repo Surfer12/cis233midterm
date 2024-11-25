@@ -1,3 +1,5 @@
+package dfsbfs;
+
 import java.util.Set;
 
 public class GenericDFS<T> implements graphgetneighbors<T> {

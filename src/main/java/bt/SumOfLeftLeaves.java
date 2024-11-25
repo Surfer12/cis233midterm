@@ -1,3 +1,4 @@
+package bt;
 
 // Given the root of a binary tree, write a code that returns the sum of all left leaves.
  

@@ -1,3 +1,5 @@
+package generic.graphs;
+
 import java.util.*;
 
 class GraphList<T> {
