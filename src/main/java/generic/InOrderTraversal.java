@@ -2,17 +2,17 @@ package generic;
 import java.util.function.Consumer;
 
 public class InOrderTraversal<T> {
-    public class TreeNode {
+    public static class TreeNode<T> {
         T data;
-        TreeNode left;
-        TreeNode right;
+        TreeNode<T> left;
+        TreeNode<T> right;
         TreeNode(T item) {
             data = item; 
             left = right = null;
         }
     }
 
-    public void inOrderTraversal(TreeNode root, Consumer<T> action) {
+    public void inOrderTraversal(TreeNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
@@ -21,7 +21,7 @@ public class InOrderTraversal<T> {
         inOrderTraversal(root.right, action);
     }
 
-    public void preOrderTraversal(TreeNode root, Consumer<T> action) {
+    public void preOrderTraversal(TreeNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
@@ -30,7 +30,7 @@ public class InOrderTraversal<T> {
         preOrderTraversal(root.right, action);
     }
 
-    public void postOrderTraversal(TreeNode root, Consumer<T> action) {
+    public void postOrderTraversal(TreeNode<T> root, Consumer<T> action) {
         if (root == null) {
             return;
         }
