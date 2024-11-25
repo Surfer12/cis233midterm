@@ -1,3 +1,62 @@
+1. Algorithm Analysis
+
+Time Complexity:    
+
+How to determine it (dominant operations, Big O notation)    
+Examples: Linear Search, Summing Array, Binary Search, Factorial    
+Understanding the impact of different time complexities (linear, logarithmic, etc.)   
+Space Complexity:    
+
+Understanding memory usage and its impact on algorithms    
+Common notations (O(1), O(n), O(log n))    
+Calculating space complexity (auxiliary space, input space)    
+Examples: Constant, linear, and logarithmic space complexities    
+2. Trees
+
+Basic Concepts:
+
+Terminology (root, parent, child, leaf, subtree, depth, height)    
+Types of trees (binary, binary search, n-ary)    
+Binary Trees:    
+
+Implementation (Node class, BinaryTree class)    
+Core operations (insert, search, delete)    
+Tree traversals (pre-order, in-order, post-order)    
+Binary Search Trees (BSTs):    
+
+Properties and benefits    
+Key operations (insertion, searching, deletion)    
+Time and space complexity    
+3. Object-Oriented Programming (OOP)
+
+Key Concepts:
+Abstraction, Encapsulation, Inheritance, Polymorphism    
+Benefits of OOP (modularity, reusability, flexibility, maintainability)    
+4. Graph Algorithms
+
+BFS Algorithm:    
+
+Steps for Breadth-First Search    
+Dijkstra's Algorithm:    
+
+Finding shortest paths in weighted graphs    
+Steps and concepts    
+Additional Notes:
+
+Assignments:
+
+Valid Palindrome, Valid Palindrome II (LeetCode problems)    
+Focus on time and space complexity optimization    
+Project:
+
+Online Food Delivery System (Java)    
+Requirements (ordering, delivery, rating, order processing)    
+Tasks (design, OOP principles, data structures, implementation, demonstration)   
+Syllabus:
+
+Course description, learning outcomes, grading, etc.    
+
+
 Mock Midterm Exam   Java Design and Object-Oriented Programming in Java exclusively.
 
 Duration: 60 minutes
