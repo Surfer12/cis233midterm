@@ -1,6 +1,4 @@
-
-
-import cis233midterm.TreeNode;
+import javax.swing.tree.TreeNode; // learn more about this import
 
 public class BST {
     TreeNode root;
