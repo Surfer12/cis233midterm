@@ -1,15 +1,11 @@
 package generic;
 import java.util.*;
-import generic.GenericNode;
 
-public class GenericTraversal {
-    public static class GenericNode<T> {
-        T data;
-        List<GenericNode<T>> neighbors;
-    }       
+public class GenericTraversal<T> {
+   
     // Method to perform Breadth-First Search (BFS) traversal using the Node class
-    public static List<Integer> bfs(GenericNode<T> startNode) {
-        List<Integer> visitedNodes = new ArrayList<>();
+    public List<T> bfs(GenericNode<T> startNode) {
+        List<T> visitedNodes = new ArrayList<>();
         Queue<GenericNode<T>> queue = new LinkedList<>();
         Set<GenericNode<T>> visited = new HashSet<>();
 
@@ -32,14 +28,14 @@ public class GenericTraversal {
     }
 
     // Method to perform Depth-First Search (DFS) traversal using the Node class
-    public static List<Integer> dfs(GenericNode<T> startNode) {
-        List<Integer> visitedNodes = new ArrayList<>();
+    public List<T> dfs(GenericNode<T> startNode) {
+        List<T> visitedNodes = new ArrayList<>();
         Set<GenericNode<T>> visited = new HashSet<>();
         dfsRecursive(startNode, visited, visitedNodes);
         return visitedNodes;
     }
 
-    private static void dfsRecursive(GenericNode<T> node, Set<GenericNode<T>> visited, List<Integer> visitedNodes) {
+    private void dfsRecursive(GenericNode<T> node, Set<GenericNode<T>> visited, List<T> visitedNodes) {
         visited.add(node);
         visitedNodes.add(node.data);
 
@@ -51,28 +47,32 @@ public class GenericTraversal {
     }
 
     // Method to perform in-order traversal using the Node class
-    public static List<Integer> inOrderTraversal(GenericNode root) {
-        List<Integer> result = new ArrayList<>();
-                    inOrderTraversalHelper(root, result);
+    public List<T> inOrderTraversal(GenericNode<T> root) {
+        List<T> result = new ArrayList<>();
+        inOrderTraversalHelper(root, result);
         return result;
     }
 
-    private static void inOrderTraversalHelper(GenericNode node, List<Integer> result) {
+    private void inOrderTraversalHelper(GenericNode<T> node, List<T> result) {
         if (node == null) {
             return;
         }
-        inOrderTraversalHelper(node.left, result);
+        if (node.left != null) {
+            inOrderTraversalHelper(node.left, result);
+        }
         result.add(node.data);
-        inOrderTraversalHelper(node.right, result);
+        if (node.right != null) {
+            inOrderTraversalHelper(node.right, result);
+        }
     }
 
     // Method to perform Dijkstra's algorithm using the Node class
-    public static Map<GenericNode, Integer> dijkstra(Map<GenericNode, Map<GenericNode, Integer>> graph, GenericNode source) {
-        Map<GenericNode, Integer> distances = new HashMap<>();
-        Set<GenericNode> visited = new HashSet<>();
+    public Map<GenericNode<T>, Integer> dijkstra(Map<GenericNode<T>, Map<GenericNode<T>, Integer>> graph, GenericNode<T> source) {
+        Map<GenericNode<T>, Integer> distances = new HashMap<>();
+        Set<GenericNode<T>> visited = new HashSet<>();
         PriorityQueue<NodeDistancePair> pq = new PriorityQueue<>(Comparator.comparingInt(pair -> pair.distance));
 
-        for (GenericNode node : graph.keySet()) {
+        for (GenericNode<T> node : graph.keySet()) {
             distances.put(node, Integer.MAX_VALUE);
         }
         distances.put(source, 0);
@@ -80,14 +80,14 @@ public class GenericTraversal {
 
         while (!pq.isEmpty()) {
             NodeDistancePair currentPair = pq.poll();
-            Generic Node currentNode = currentPair.node;
+            GenericNode<T> currentNode = currentPair.node;
             int currentDistance = currentPair.distance;
 
             if (visited.contains(currentNode)) continue;
             visited.add(currentNode);
 
-            for (Map.Entry<GenericNode, Integer> neighborEntry : graph.get(currentNode).entrySet()) {
-                GenericNode neighborNode = neighborEntry.getKey();
+            for (Map.Entry<GenericNode<T>, Integer> neighborEntry : graph.get(currentNode).entrySet()) {
+                GenericNode<T> neighborNode = neighborEntry.getKey();
                 int weight = neighborEntry.getValue();
                 int newDistance = currentDistance + weight;
 
@@ -102,11 +102,11 @@ public class GenericTraversal {
     }
 
     // Helper class to store node-distance pairs for Dijkstra's algorithm
-    public static class NodeDistancePair {
-        GenericNode node;
+    public class NodeDistancePair {
+        GenericNode<T> node;
         int distance;
 
-        NodeDistancePair(GenericNode node, int distance) {
+        NodeDistancePair(GenericNode<T> node, int distance) {
             this.node = node;
             this.distance = distance;
         }

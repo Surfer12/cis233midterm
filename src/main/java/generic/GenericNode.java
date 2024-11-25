@@ -6,6 +6,8 @@ import java.util.List;
 public class GenericNode<T> {
     T data;
     List<GenericNode<T>> neighbors;
+    GenericNode<T> left;
+    GenericNode<T> right;
 
     public GenericNode(T data) {
         this.data = data;
@@ -33,4 +35,20 @@ public class GenericNode<T> {
     public void removeNeighbor(GenericNode<T> neighbor) {
         neighbors.remove(neighbor);
     }
+
+    public GenericNode<T> getLeft() {
+        return left;
+    }
+
+    public void setLeft(GenericNode<T> left) {
+        this.left = left;
+    }
+
+    public GenericNode<T> getRight() {
+        return right;
+    }
+
+    public void setRight(GenericNode<T> right) {
+        this.right = right;
+    }   
 }
