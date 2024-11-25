@@ -1,12 +1,14 @@
 1. Algorithm Analysis
 
 Time Complexity:    
-
 How to determine it (dominant operations, Big O notation)    
-Examples: Linear Search, Summing Array, Binary Search, Factorial    
-Understanding the impact of different time complexities (linear, logarithmic, etc.)   
-Space Complexity:    
 
+Examples: Linear Search, Summing Array, Binary Search, Factorial    
+
+Understanding the impact of different time complexities (linear, logarithmic, 
+etc.)   
+
+Space Complexity:    
 Understanding memory usage and its impact on algorithms    
 Common notations (O(1), O(n), O(log n))    
 Calculating space complexity (auxiliary space, input space)    
