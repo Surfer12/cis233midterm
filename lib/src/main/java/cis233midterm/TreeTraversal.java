@@ -5,8 +5,8 @@ public class TreeTraversal {
         if (root == null) {
             return;
         }
-        for (int data : GenericTraversal.inOrderTraversal(root)) {
-            System.out.println(data);
-        }
+        printElements(root.left);
+        System.out.println(root.data);
+        printElements(root.right); 
     }
 }

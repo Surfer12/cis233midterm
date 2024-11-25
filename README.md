@@ -1,18 +1,54 @@
+# CIS 233 Midterm Repository
+
+## Overview
+
+This repository contains study materials, code examples, and practice problems for the CIS 233 Midterm. The repository is organized into several directories, each containing relevant files and documentation.
+
+## Repository Structure
+
+The repository is organized as follows:
+
+- `lib/src/docs/`: Contains documentation files, including study guides, cheat sheets, and practice problems.
+  - `cheatsheets/`: Contains cheat sheets for various topics.
+  - `dfsbfs/`: Contains documentation and code related to Depth-First Search (DFS) and Breadth-First Search (BFS) algorithms.
+  - `graphs/`: Contains documentation and code related to graph algorithms.
+  - `miscquestions/`: Contains miscellaneous questions and answers for review.
+  - `mockexamsfolder/`: Contains mock exams for practice.
+
+- `lib/src/main/java/cis233midterm/`: Contains Java code files for various algorithms and data structures.
+  - `graphalgorithms/`: Contains Java files related to graph algorithms.
+  - `treetraversal/`: Contains Java files related to tree traversal algorithms.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+To get started with this repository, follow these steps:
 
-## Folder Structure
+1. Clone the repository to your local machine:
+   ```sh
+   git clone https://github.com/Surfer12/cis233midterm.git
+   ```
 
-The workspace contains two folders by default, where:
+2. Navigate to the repository directory:
+   ```sh
+   cd cis233midterm
+   ```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+3. Open the project in your preferred IDE (e.g., Visual Studio Code, IntelliJ IDEA).
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+4. Build the project using Gradle:
+   ```sh
+   ./gradlew build
+   ```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+5. Run the project:
+   ```sh
+   ./gradlew run
+   ```
 
-## Dependency Management
+## Contributing
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+We welcome contributions to this repository. Please refer to the `CONTRIBUTING.md` file for guidelines on how to contribute.
+
+## License
+
+This repository is licensed under the MIT License. See the `LICENSE` file for more information.

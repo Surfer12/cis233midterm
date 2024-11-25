@@ -1,27 +1,27 @@
 package cis233midterm;
 
-public class BinarySearchTree<T extends Comparable<T>> {
-    TreeNode<T> root;
+import lib.src.docs.legacyalgo.Node;
 
-    public BinarySearchTree() {
-        root = null;
-    }
+public class BinarySearchTree {
+        Node root;
 
-    public void insert(T value) {
-        root = insertRec(root, value);
-    }
-
-    private TreeNode<T> insertRec(TreeNode<T> root, T value) {
-        if (root == null) {
-            return new TreeNode<>(value);
+        public BinarySearchTree() {
+            root = null;
         }
 
-        if (value.compareTo(root.val) < 0) {
-            root.left = insertRec(root.left, value);
-        } else if (value.compareTo(root.val) > 0) {
-            root.right = insertRec(root.right, value);
+        public void insert(int value) {
+            root = insertRec(root, value);
         }
 
-        return root;
-    }
-}
+        private Node insertRec(Node root, int value) {
+            if (root == null) {
+                return new Node(value);
+            }
+            if (value < root.data) {
+                root.left = insertRec(root.left, value);
+            } else if (value > root.data) {
+                root.right = insertRec(root.right, value);
+            }
+            return root;
+        }
+}   
