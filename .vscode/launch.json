@@ -8,14 +8,14 @@
             "type": "java",
             "name": "WeightedGraph",
             "request": "launch",
-            "mainClass": "WeightedGraph",
+            "mainClass": "Main",
             "projectName": "cis233midterm"
         },
         {
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "Main"
         },
         {
             "type": "java",
@@ -63,7 +63,7 @@
             "type": "java",
             "name": "djikstra",
             "request": "launch",
-            "mainClass": "djikstra",
+            "mainClass": "Main",
             "projectName": "cis233midterm"
         }
     ]
