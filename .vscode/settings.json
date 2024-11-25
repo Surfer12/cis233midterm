@@ -1,17 +1,6 @@
 {
-    "java.project.sourcePaths": ["lib", "src", "docs", "main", "java", "cis233midterm", "test", "legacyalgo"],
-    "java.project.outputPath": "bin",
-    "java.project.buildScriptManagement.buildFile": "build.gradle",
-    "java.project.buildScriptManagement.enabled": false,
-    "java.runtime.configuration.updateBuildConfiguration": "automatic",
-    "java.runtime.version": "23",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ],
-    "java.jdt.ls.java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home",
-    "java.import.gradle.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home/bin",
-    "java.import.gradle.use.gradle.wrapper": true,
-    "java.import.gradle.use.gradle.wrapper.version": "8.11",
-    "java.import.gradle.use.gradle.wrapper.distribution.url": "https://services.gradle.org/distributions/gradle-8.11-bin.zip"
+    "java.jdt.ls.java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
+
+    
 }
 

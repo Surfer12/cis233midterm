@@ -1,5 +1,4 @@
-package generic.dfs;
-
+package generic.dfs;        
 import java.util.*;
 import generic.Graph;
 
