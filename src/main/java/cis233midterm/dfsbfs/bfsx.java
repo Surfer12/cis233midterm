@@ -1,11 +1,10 @@
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-public class BFSx {
+public class bfsx {
 
     public static void bfs(Map<Integer, Map<Integer, Integer>> graph, int startNode) {
         Set<Integer> visited = new HashSet<>();
@@ -25,10 +24,5 @@ public class BFSx {
                 }
             }
         }
-    }
-    public static void main(String[] args) {
-        int startNode = 1; // Choose your starting node
-        bfs(graph, startNode);
-        
     }
 }
