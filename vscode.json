@@ -1,5 +1,5 @@
 {
-    "java.project.sourcePaths": ["lib", "src", "docs", "main", "java", "cis233midterm"],
+    "java.project.sourcePaths": ["lib", "src", "docs", "main", "java", "cis233midterm", "test"],
     "java.project.outputPath": "bin",
     "java.project.buildScriptManagement.buildFile": "build.gradle",
     "java.project.buildScriptManagement.enabled": true,

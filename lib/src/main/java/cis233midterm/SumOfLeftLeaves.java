@@ -1,4 +1,4 @@
-package cis233midterm;  
+package cis233midterm;
 import TreeNode;
 
 // Given the root of a binary tree, write a code that returns  the sum of all left leaves.
@@ -25,12 +25,12 @@ class SolutionToSumLeftLeaves {
         // Initialize sum
         int sum = 0;
         
-        // Check if left child exists and is a leaf
+        // Check if left child exists and is a valid node to process since it is a leaf with no children
         if (root.left != null && root.left.left == null && root.left.right == null) {
             sum += root.left.val;
         }
         
-        // Recursively explore left and right subtrees
+        // Recursively explore left and right subtrees to find left leaves to sum
         sum += sumOfLeftLeaves(root.left);
         sum += sumOfLeftLeaves(root.right);
         
