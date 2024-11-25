@@ -8,3 +8,9 @@
 
 rootProject.name = 'cis233midterm'
 
+// Include subprojects if any
+// include 'module1', 'module2'
+
+// Configure project directories
+project(':').projectDir = file('cis233midterm')
+

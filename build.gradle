@@ -10,6 +10,8 @@ plugins {
     id 'java'
     id 'java-library'
     id 'application'
+    id 'jacoco' // Added for code coverage
+    id 'checkstyle' // Added for code quality
 }
 
 java {
@@ -27,6 +29,8 @@ repositories {
 dependencies {
     implementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    implementation 'org.slf4j:slf4j-api:2.0.7' // Added SLF4J for logging
+    testImplementation 'org.mockito:mockito-core:4.11.0' // Added Mockito for testing
 }
 
 run {
@@ -46,8 +50,39 @@ sourceSets {
     }
 }
 
-mainClassName = 'cis233midterm.SumOfLeftLeaves'
+application {
+    mainClassName = 'cis233midterm.SumOfLeftLeaves'
+}
+
+checkstyle {
+    toolVersion = '10.11.0'
+    config = resources.text.fromFile('config/checkstyle/checkstyle.xml')
+}
+
+jacoco {
+    toolVersion = '0.8.10'
+}
+
+tasks.register('fatJar', Jar) {
+    archiveClassifier = 'all'
+    manifest {
+        attributes 'Main-Class': 'cis233midterm.SumOfLeftLeaves'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with tasks.jar
+}
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
