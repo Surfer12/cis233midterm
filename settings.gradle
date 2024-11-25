@@ -7,11 +7,4 @@
  */
 
 rootProject.name = 'cis233midterm'
-include 'lib'
-include 'src'
-include 'docs'
-include 'main'
-include 'java'
-include 'cis233midterm'
-
 
