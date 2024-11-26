@@ -6,7 +6,7 @@
 
 [versions]
 # Core language and build tools
-java = "17"
+java = "23"
 kotlin = "1.8.20"
 gradle = "8.1.1"
 
