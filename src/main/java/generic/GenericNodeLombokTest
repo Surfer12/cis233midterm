@@ -18,11 +18,5 @@ import java.util.Objects;
 public class GenericNodeLombokTest<T> {
     private T data;
 
-    // Lombok will generate:
-    // - Getters and setters for data
-    // - No-args constructor
-    // - All-args constructor
-    // - toString() method
-    // - equals() and hashCode() methods
 }
 

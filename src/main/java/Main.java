@@ -1,12 +1,12 @@
-import generic.GenericNode;
-import generic.graphs.WeightedGraph;
-import generic.DijkstraGenericCopy;
+import generic.GenericNodeLombokTest;
+import generic.graphs.WeightedGraphLombokTest;
+import legacyalgo.DijkstraGeneric;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         // Using Builder pattern from Lombok
-        WeightedGraph graph = WeightedGraph.builder()
+        WeightedGraphLombokTest graph = WeightedGraphLombokTest.builder()
             .vertices(6)
             .build();
 
@@ -26,10 +26,10 @@ public class Main {
         graph.addEdge(3, 4, 6);
         graph.addEdge(4, 5, 9);
 
-        GenericNode<Integer> source = new GenericNode<>(0);
-        GenericNode<Integer> destination = new GenericNode<>(5);
+        GenericNodeLombokTest<Integer> source = new GenericNodeLombokTest<>(0);
+        GenericNodeLombokTest<Integer> destination = new GenericNodeLombokTest<>(5);
         
-        Map<GenericNode<Integer>, Integer> distances = DijkstraGenericCopy.dijkstra(graph, source, destination);
+        Map<GenericNodeLombokTest<Integer>, Integer> distances = DijkstraGeneric.dijkstra(graph, source, destination);
 
         System.out.println("The shortest path from node 0 to node 5 is " + distances.get(destination));
     }
