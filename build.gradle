@@ -54,5 +54,5 @@ test {
 
 // Configuration cache optimization
 tasks.withType(GenerateModuleMetadata) {
-    enabled = false
+    enabled = true
 }
