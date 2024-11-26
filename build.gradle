@@ -8,12 +8,12 @@
         
 plugins {
     id 'java'
+    id 'io.freefair.lombok' version '6.4.1'
     id 'java-library'
     id 'application'
     id 'jacoco' // Added for code coverage
     id 'checkstyle' // Added for code quality
-    id 'lombok'
-    id 'Spring Assistant'
+    id 'org.springframework.boot' version '3.1.2'
 }
 
 java {
@@ -35,7 +35,9 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:4.11.0' // Added Mockito for testing
     implementation 'com.google.guava:guava:31.1-jre'// chatgpt noted as such 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0' // chatgpted as such
-
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    implementation 'org.springframework.boot:spring-boot-starter'
 }
 
 run {
