@@ -12,6 +12,8 @@ plugins {
     id 'application'
     id 'jacoco' // Added for code coverage
     id 'checkstyle' // Added for code quality
+    id 'lombok'
+    id 'Spring Assistant'
 }
 
 java {
@@ -31,6 +33,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
     implementation 'org.slf4j:slf4j-api:2.0.7' // Added SLF4J for logging
     testImplementation 'org.mockito:mockito-core:4.11.0' // Added Mockito for testing
+    implementation 'com.google.guava:guava:31.1-jre'// chatgpt noted as such 
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0' // chatgpted as such
+
 }
 
 run {
