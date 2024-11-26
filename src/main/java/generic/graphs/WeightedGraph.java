@@ -121,15 +121,13 @@ public class WeightedGraph implements Graph<Integer> {
     }
 
     public static class Node {
-
         public int vertex;
         public int weight;
 
-        public Node() {
-        }
-
-        public Node(int startVertex, int i) {
-            throw new UnsupportedOperationException("Not supported yet.");
+        // Constructor for Node
+        public Node(int vertex, int weight) {
+            this.vertex = vertex;
+            this.weight = weight;
         }
     }
 }
