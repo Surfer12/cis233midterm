@@ -6,11 +6,13 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = 'cis233midterm'
-
 // If you want to include a specific project, replace 'DijkstraProject' with the actual project name
 // include 'DijkstraProject'
 
 // Include subprojects if any
 // include 'module1', 'module2'
+
+
+rootProject.name = 'cis233midterm'
+include 'DijkstraProject'
 

@@ -28,6 +28,10 @@ repositories {
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+    }
 }
 
 configurations {
@@ -56,3 +60,4 @@ test {
 tasks.withType(GenerateModuleMetadata) {
     enabled = true
 }
+
