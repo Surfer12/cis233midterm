@@ -1,0 +1,45 @@
+{
+    "java.jdt.ls.java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home",
+    "gradle.autoDetect": "on",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.project.sourcePaths": [
+        "src/main/java",
+        "src/test/java"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[java-test]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "java.checkstyle.version": "10.12.0",
+    "java.checkstyle.configuration": "google_checks.xml",
+    "java.checkstyle.autoEnable": true,
+    "java.checkstyle.ignore": [
+        "src/main/java/com/example/demo/DemoApplication.java"
+    ],
+    "java.checkstyle.overrides": [
+        {
+            "files": [
+                "src/main/java/**/*.java"
+            ],
+            "config": {
+                "Checkstyle": {
+                    "ignoreProtectedField": "true"
+                }
+            }
+        }
+    ],
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-23",
+            "path": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
+        }
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
+}
+

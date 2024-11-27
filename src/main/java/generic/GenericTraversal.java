@@ -66,6 +66,36 @@ public class GenericTraversal<T> {
         }
     }
 
+    public List<T> preOrderTraversal(GenericNode<T> root) {
+        List<T> result = new ArrayList<>();
+        preOrderTraversalHelper(root, result);
+        return result;
+    }
+
+    private void preOrderTraversalHelper(GenericNode<T> node, List<T> result) {
+        if (node == null) {
+            return;
+        }
+        result.add(node.data);
+        preOrderTraversalHelper(node.left, result);
+        preOrderTraversalHelper(node.right, result);
+    }
+
+    public List<T> postOrderTraversal(GenericNode<T> root) {
+        List<T> result = new ArrayList<>();
+        postOrderTraversalHelper(root, result);
+        return result;
+    }
+
+    private void postOrderTraversalHelper(GenericNode<T> node, List<T> result) {
+        if (node == null) {
+            return;
+        }
+        postOrderTraversalHelper(node.left, result);
+        postOrderTraversalHelper(node.right, result);
+        result.add(node.data);
+    }
+
     // Method to perform Dijkstra's algorithm using the Node class
     public Map<GenericNode<T>, Integer> dijkstra(Graph<T> graph, GenericNode<T> source) {
         Map<GenericNode<T>, Integer> distances = new HashMap<>();

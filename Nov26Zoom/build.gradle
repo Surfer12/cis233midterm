@@ -1,0 +1,63 @@
+/**
+ * Gradle build configuration for nov-26-2024
+ * 
+ * This build script configures the project's build process, dependencies, 
+ * and other build-related settings for the midterm assignment.
+ */
+ 
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'application'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'io.freefair.lombok' version '8.1.0'
+}
+
+group = 'com.yourcompany'
+version = '0.0.1-SNAPSHOT'
+
+// Add these repository definitions
+repositories {
+    // Use Maven Central for resolving dependencies
+    mavenCentral()
+    
+    // Optional: Add Maven local repository if needed
+    mavenLocal()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    // Spring Boot Starter
+    implementation 'org.springframework.boot:spring-boot-starter'
+    
+    // Test dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    
+    // JUnit dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Configuration cache optimization
+tasks.withType(GenerateModuleMetadata) {
+    enabled = true
+}
+
