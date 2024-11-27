@@ -10,7 +10,7 @@ public class GraphRepresentation<T> implements Graph<T> {
     public GraphRepresentation() {
         adjacencyGraph = new HashMap<>();
     }
-
+    
     @Override
     public void addVertex(T vertex) {
         if (!adjacencyGraph.containsKey(vertex)) {
@@ -19,11 +19,22 @@ public class GraphRepresentation<T> implements Graph<T> {
         }
     }
 
-    // Remove @Override since this method does not exist in the Graph interface
+
+    @Override
     public void addEdge(T source, T destination) {
         adjacencyGraph.putIfAbsent(source, new HashSet<>());
         adjacencyGraph.putIfAbsent(destination, new HashSet<>());
         adjacencyGraph.get(source).add(destination);
+        adjacencyGraph.get(destination).add(source);
+    }
+
+
+    // Remove @Override since this method does not exist in the Graph interface
+    public void addEdge(T source, T destination, int weight) {
+        adjacencyGraph.putIfAbsent(source, new HashSet<>());
+        adjacencyGraph.putIfAbsent(destination, new HashSet<>());
+        adjacencyGraph.get(source).add(destination);
+        adjacencyGraph.get(destination).add(source);
     }
 
     @Override
@@ -52,7 +63,7 @@ public class GraphRepresentation<T> implements Graph<T> {
 
     @Override
     public int getVertices() {
-        return adjacencyGraph.getOrDefault(this, defaultValue)
+        return adjacencyGraph.
     }
 
     @Override
@@ -61,11 +72,16 @@ public class GraphRepresentation<T> implements Graph<T> {
     }
 
     @Override
-    public void printGraph() {
+    public void printGraphGeneric() {
         for (Map.Entry<T, Set<T>> entry : adjacencyGraph.entrySet()) {
             System.out.print(entry.getKey() + " -> ");
             System.out.println(entry.getValue());
         }
+    }
+
+    @Override
+    public void printGraph() {
+        printGraphGeneric();
     }
 
     public static void main(String[] args) {
