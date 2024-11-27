@@ -46,7 +46,8 @@ public class GenericTraversal<T> {
         }
     }
 
-    // Method to perform in-order traversal using the Node class
+    // Method to perform in-order traversal using the Node class 
+// TODO check ordering of this helper method in order is left root right 
     public List<T> inOrderTraversal(GenericNode<T> root) {
         List<T> result = new ArrayList<>();
         inOrderTraversalHelper(root, result);
