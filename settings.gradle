@@ -6,12 +6,8 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-// If you want to include a specific project, replace 'DijkstraProject' with the actual project name
-// include 'DijkstraProject'
-
-// Include subprojects if any
-// include 'module1', 'module2'
-
+// Enable the settings cache and build cache
+enableFeaturePreview('STABLE_CONFIGURATION_CACHE')
 
 rootProject.name = 'cis233midterm'
 include 'DijkstraProject'
