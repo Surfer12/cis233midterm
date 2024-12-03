@@ -1,21 +1,17 @@
-import generic.GenericNodeLombokTest;
-import generic.graphs.WeightedGraphLombokTest;
-import legacyalgo.DijkstraGeneric;
+import generic.graphs.GraphRepresentation;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Using Builder pattern from Lombok
-        WeightedGraphLombokTest graph = WeightedGraphLombokTest.builder()
-            .vertices(6)
-            .build();
+        // Create a weighted graph using GraphRepresentation
+        GraphRepresentation<Integer> graph = new GraphRepresentation<>();
 
-        // Initialize adjacency list
+        // Add vertices
         for (int i = 0; i < 6; i++) {
-            graph.getAdjList().add(new ArrayList<>());
+            graph.addVertex(i);
         }
 
-        // Add edges
+        // Add weighted edges
         graph.addEdge(0, 1, 7);
         graph.addEdge(0, 2, 9);
         graph.addEdge(0, 5, 14);
@@ -26,11 +22,13 @@ public class Main {
         graph.addEdge(3, 4, 6);
         graph.addEdge(4, 5, 9);
 
-        GenericNodeLombokTest<Integer> source = new GenericNodeLombokTest<>(0);
-        GenericNodeLombokTest<Integer> destination = new GenericNodeLombokTest<>(5);
-        
-        Map<GenericNodeLombokTest<Integer>, Integer> distances = DijkstraGeneric.dijkstra(graph, source, destination);
+        // Print the graph
+        System.out.println("Graph representation:");
+        graph.printGraph();
 
-        System.out.println("The shortest path from node 0 to node 5 is " + distances.get(destination));
+        // Perform DFS starting from vertex 0
+        System.out.println("\nDepth-First Search starting from vertex 0:");
+        Set<Integer> visited = new HashSet<>();
+        graph.dfs(0, visited, graph);
     }
 }

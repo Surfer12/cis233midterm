@@ -1,5 +1,23 @@
 package generic;
+
 import java.util.*;
+
+// Separate GenericNode class
+class GenericNode<T> {
+    T data;
+    GenericNode<T> left;
+    GenericNode<T> right;
+    Set<GenericNode<T>> neighbors;
+
+    public GenericNode(T data) {
+        this.data = data;
+        this.neighbors = new HashSet<>();
+    }
+
+    public void addNeighbor(GenericNode<T> neighbor) {
+        neighbors.add(neighbor);
+    }
+}
 
 public class GenericTraversal<T> {
    
@@ -47,7 +65,6 @@ public class GenericTraversal<T> {
     }
 
     // Method to perform in-order traversal using the Node class 
-// TODO check ordering of this helper method in order is left root right 
     public List<T> inOrderTraversal(GenericNode<T> root) {
         List<T> result = new ArrayList<>();
         inOrderTraversalHelper(root, result);
@@ -78,8 +95,12 @@ public class GenericTraversal<T> {
             return;
         }
         result.add(node.data);
-        preOrderTraversalHelper(node.left, result);
-        preOrderTraversalHelper(node.right, result);
+        if (node.left != null) {
+            preOrderTraversalHelper(node.left, result);
+        }
+        if (node.right != null) {
+            preOrderTraversalHelper(node.right, result);
+        }
     }
 
     public List<T> postOrderTraversal(GenericNode<T> root) {
@@ -92,64 +113,27 @@ public class GenericTraversal<T> {
         if (node == null) {
             return;
         }
-        postOrderTraversalHelper(node.left, result);
-        postOrderTraversalHelper(node.right, result);
+        if (node.left != null) {
+            postOrderTraversalHelper(node.left, result);
+        }
+        if (node.right != null) {
+            postOrderTraversalHelper(node.right, result);
+        }
         result.add(node.data);
     }
 
-    // Method to perform Dijkstra's algorithm using the Node class
-    public Map<GenericNode<T>, Integer> dijkstra(Graph<T> graph, GenericNode<T> source) {
-        Map<GenericNode<T>, Integer> distances = new HashMap<>();
-        Set<GenericNode<T>> visited = new HashSet<>();
-        PriorityQueue<NodeDistancePair> pq = new PriorityQueue<>(Comparator.comparingInt(pair -> pair.distance));
+    public static void main(String[] args) {
+        // Example usage of tree traversals
+        GenericNode<Integer> root = new GenericNode<>(1);
+        root.left = new GenericNode<>(2);
+        root.right = new GenericNode<>(3);
+        root.left.left = new GenericNode<>(4);
+        root.left.right = new GenericNode<>(5);
 
-        for (GenericNode<T> node : graph.keySet()) {
-            distances.put(node, Integer.MAX_VALUE);
-        }
-        distances.put(source, 0);
-        pq.offer(new NodeDistancePair(source, 0));
-
-        while (!pq.isEmpty()) {
-            NodeDistancePair currentPair = pq.poll();
-            GenericNode<T> currentNode = currentPair.node;
-            int currentDistance = currentPair.distance;
-
-            if (visited.contains(currentNode)) continue;
-            visited.add(currentNode);
-
-            for (Map.Entry<GenericNode<T>, Integer> neighborEntry : graph.get(currentNode).entrySet()) {
-                GenericNode<T> neighborNode = neighborEntry.getKey();
-                int weight = neighborEntry.getValue();
-                int newDistance = currentDistance + weight;
-
-                if (newDistance < distances.get(neighborNode)) {
-                    distances.put(neighborNode, newDistance);
-                    pq.offer(new NodeDistancePair(neighborNode, newDistance));
-                }
-            }
-        }
-
-        return distances;
+        GenericTraversal<Integer> traversal = new GenericTraversal<>();
+        
+        System.out.println("In-order traversal: " + traversal.inOrderTraversal(root));
+        System.out.println("Pre-order traversal: " + traversal.preOrderTraversal(root));
+        System.out.println("Post-order traversal: " + traversal.postOrderTraversal(root));
     }
-
-    // Helper class to store node-distance pairs for Dijkstra's algorithm
-    public class NodeDistancePair {
-        GenericNode<T> node;
-        int distance;
-
-        NodeDistancePair(GenericNode<T> node, int distance) {
-            this.node = node;
-            this.distance = distance;
-        }
-    }
-}
-
-// New GenericNode class with left and right properties
-public class GenericNode<T> {
-    T data;
-    GenericNode<T> left;
-    GenericNode<T> right;
-    Set<GenericNode<T>> neighbors;
-
-    // ...existing constructors and methods...
 }

@@ -1,58 +1,89 @@
 package generic.graphs;
 
+import generic.Graph;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GraphMatrix<T extends Integer> implements Graph<T> {
+public class GraphMatrix<T> implements Graph<T> {
     private final int vertices;
     private final int[][] adjacencyMatrix;
+    private final int[][] weightMatrix;
 
     public GraphMatrix(int vertices) {
         this.vertices = vertices;
         adjacencyMatrix = new int[vertices][vertices];
+        weightMatrix = new int[vertices][vertices];
+    }
+
+    @Override
+    public void dfs(T node, Set<T> visited, Graph<T> graph) {
+        if (node == null)
+            return;
+
+        visited.add(node);
+        System.out.print(node + " ");
+
+        for (T neighbor : graph.getNeighbors(node)) {
+            if (!visited.contains(neighbor)) {
+                dfs(neighbor, visited, graph);
+            }
+        }
     }
 
     @Override
     public void addVertex(T vertex) {
-        // Implementation
+        // In matrix representation, vertices are pre-allocated
+        System.out.println("Vertex " + vertex + " added");
     }
 
     @Override
     public void addEdge(T source, T destination) {
-        // For an unweighted graph, simply mark the connection:
-        adjacencyMatrix[source][destination] = 1; 
+        int src = (int) source;
+        int dest = (int) destination;
+        adjacencyMatrix[src][dest] = 1;
+        adjacencyMatrix[dest][src] = 1;
+    }
 
-        // For an undirected graph, add the reverse edge as well:
-        adjacencyMatrix[destination][source] = 1; 
-
-        // For a weighted graph, add the weight instead of 1:
-        // adjacencyMatrix[source][destination] = weight;
-        // adjacencyMatrix[destination][source] = weight; 
+    @Override
+    public void addEdge(T source, T destination, int weight) {
+        int src = (int) source;
+        int dest = (int) destination;
+        adjacencyMatrix[src][dest] = 1;
+        adjacencyMatrix[dest][src] = 1;
+        weightMatrix[src][dest] = weight;
+        weightMatrix[dest][src] = weight;
     }
 
     @Override
     public void removeVertex(T vertex) {
-        // Implementation
+        int v = (int) vertex;
+        for (int i = 0; i < vertices; i++) {
+            adjacencyMatrix[v][i] = 0;
+            adjacencyMatrix[i][v] = 0;
+            weightMatrix[v][i] = 0;
+            weightMatrix[i][v] = 0;
+        }
     }
 
     @Override
     public void removeEdge(T source, T destination) {
-        adjacencyMatrix[source][destination] = 0;
-        adjacencyMatrix[destination][source] = 0; // For undirected graph
-    }
-
-    @Override
-    public boolean hasEdge(T source, T destination) {
-        return adjacencyMatrix[source][destination] != 0;
+        int src = (int) source;
+        int dest = (int) destination;
+        adjacencyMatrix[src][dest] = 0;
+        adjacencyMatrix[dest][src] = 0;
+        weightMatrix[src][dest] = 0;
+        weightMatrix[dest][src] = 0;
     }
 
     @Override
     public Set<T> getNeighbors(T vertex) {
         Set<T> neighbors = new HashSet<>();
-        int v = vertex;
+        int v = ((Number) vertex).intValue();
         for (int i = 0; i < vertices; i++) {
             if (adjacencyMatrix[v][i] != 0) {
-                neighbors.add((T) Integer.valueOf(i));
+                @SuppressWarnings("unchecked")
+                T neighborVertex = (T) Integer.valueOf(i);
+                neighbors.add(neighborVertex);
             }
         }
         return neighbors;
@@ -82,5 +113,10 @@ public class GraphMatrix<T extends Integer> implements Graph<T> {
         graph.addEdge(3, 4);
 
         graph.printGraph();
+
+        // Demonstrate DFS
+        System.out.println("\nDepth-First Search starting from vertex 0:");
+        Set<Integer> visited = new HashSet<>();
+        graph.dfs(0, visited, graph);
     }
 }
