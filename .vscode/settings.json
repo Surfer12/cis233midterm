@@ -37,8 +37,14 @@
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-17",
-            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.13.11-hotspot"
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.13.11-hotspot",
+            "default": true
         }
-    ]
+    ],
+    "java.gradle.home": "C:\\Users\\josep\\.gradle\\wrapper\\dists\\gradle-8.11-all\\1802455065000-1660000000000\\gradle-8.11",
+    "java.gradle.version": "8.11",
+    "java.gradle.autoDetect": "on",
+    
+
 }
 
