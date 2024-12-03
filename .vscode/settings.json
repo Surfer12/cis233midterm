@@ -1,7 +1,7 @@
 {
-    "java.jdt.ls.java.home": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home",
+    "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.13.11-hotspot",
     "gradle.autoDetect": "on",
-    "java.configuration.updateBuildConfiguration": "manual",
+    "java.configuration.updateBuildConfiguration": "interactive",
     "java.project.sourcePaths": [
         "src/main/java",
         "src/test/java"
@@ -36,8 +36,8 @@
     ],
     "java.configuration.runtimes": [
         {
-            "name": "JavaSE-23",
-            "path": "/Users/ryanoates/Library/Java/JavaVirtualMachines/openjdk-23.0.1/Contents/Home"
+            "name": "JavaSE-17",
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.13.11-hotspot"
         }
     ]
 }
