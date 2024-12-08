@@ -1,10 +1,10 @@
 /**
  * Gradle build configuration for CIS233 Midterm Project
- * 
- * This build script configures the project's build process, dependencies, 
+ *
+ * This build script configures the project's build process, dependencies,
  * and other build-related settings for the midterm assignment.
  */
- 
+
 plugins {
     id 'java'
     id 'java-library'
@@ -21,7 +21,7 @@ version = '0.0.1-SNAPSHOT'
 repositories {
     // Use Maven Central for resolving dependencies
     mavenCentral()
-    
+
     // Optional: Add Maven local repository if needed
     mavenLocal()
 }
@@ -31,8 +31,8 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
     toolchain {
         languageVersion.toSet(JavaLanguageVersion.of(17))
-        vendor.toSet(JvmVendorSpec.ADOPTIUM)
-        version.toSet(JavaVersion.VERSION_17)
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+        version.set(JavaVersion.VERSION_17)
     }
 }
 
@@ -45,10 +45,10 @@ configurations {
 dependencies {
     // Spring Boot Starter
     implementation 'org.springframework.boot:spring-boot-starter'
-    
+
     // Test dependencies
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    
+
     // JUnit dependencies
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
